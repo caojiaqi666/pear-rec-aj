@@ -179,7 +179,7 @@ function initIpcMain() {
     setTimeout(() => {
       shotScreenWin.hideShotScreenWin();
       shotScreenWin.showShotScreenWin();
-    }, 100 * 2);
+    }, 10);
   });
   ipcMain.on('ss:download-img', async (e, file) => {
     shotScreenWin.downloadImg(file);

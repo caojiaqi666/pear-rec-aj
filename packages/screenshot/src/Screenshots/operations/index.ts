@@ -9,15 +9,16 @@ import Brush from './Brush';
 import Arrow from './Arrow';
 import Ellipse from './Ellipse';
 import Rectangle from './Rectangle';
-import Search from './Search';
-import Scan from './Scan';
-import Pin from './Pin';
+// import Search from './Search';
+// import Scan from './Scan';
+// import Pin from './Pin';
+import LongCut from "./LongCut"
 
 export default [
-  Pin,
-  Scan,
-  Search,
-  '|',
+  // Pin,
+  // Scan,
+  // Search,
+  // '|',
   Rectangle,
   Ellipse,
   Arrow,
@@ -28,6 +29,7 @@ export default [
   Undo,
   Redo,
   '|',
+  LongCut,
   Save,
   Cancel,
   Ok,

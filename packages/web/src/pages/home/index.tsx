@@ -2,6 +2,7 @@ import { ExclamationCircleFilled } from '@ant-design/icons';
 import { Anchor, Modal, Card } from 'antd';
 import React, { useEffect, useRef, useState } from 'react';
 import EditGifCard from '../../components/card/editGifCard';
+import LongCutScreenCard from "../../components/card/longCutScreenCard";
 import RecordAudioCard from '../../components/card/recordAudioCard';
 import RecordScreenCard from '../../components/card/recordScreenCard';
 import RecordVideoCard from '../../components/card/recordVideoCard';
@@ -158,50 +159,69 @@ const Home: React.FC = () => {
         <div className="content">
           <Card>
             <div id="main" />
+            {/* 截图 */}
             <Card.Grid style={gridStyle}>
               <CutScreenCard ref={cscRef} />
             </Card.Grid>
+            {/* 长截屏 */}
+            <Card.Grid style={gridStyle}>
+              <LongCutScreenCard ref={rscRef} />
+            </Card.Grid>
+            {/* 录屏 */}
             <Card.Grid style={gridStyle}>
               <RecordScreenCard ref={rscRef} />
             </Card.Grid>
+            {/* 录像 */}
             <Card.Grid style={gridStyle}>
               <RecordVideoCard ref={rvcRef} />
             </Card.Grid>
+            {/* 录音 */}
             <Card.Grid style={gridStyle}>
               <RecordAudioCard ref={racRef} />
             </Card.Grid>
+            {/* 录动图 */}
             <Card.Grid style={gridStyle}>
               <EditGifCard />
             </Card.Grid>
+            {/* 查看图片 */}
             <Card.Grid style={gridStyle}>
               <ViewImageCard />
             </Card.Grid>
+            {/* 查看视频 */}
             <Card.Grid style={gridStyle}>
               <ViewVideoCard />
             </Card.Grid>
+            {/* 查看音频 */}
             <Card.Grid style={gridStyle}>
               <ViewAudioCard />
             </Card.Grid>
             <div id="image" />
+            {/* 搜图 */}
             <Card.Grid style={gridStyle}>
               <SearchImageCard user={user} />
             </Card.Grid>
+            {/* 扫码 */}
             <Card.Grid style={gridStyle}>
               <ScanImageCard />
             </Card.Grid>
+            {/* 图片拼接 */}
             <Card.Grid style={gridStyle}>
               <SpliceImageCard />
             </Card.Grid>
+            {/* 贴图 */}
             <Card.Grid style={gridStyle}>
               <PinImageCard />
             </Card.Grid>
+            {/* 编辑图片 */}
             <Card.Grid style={gridStyle}>
               <EditImageCard />
             </Card.Grid>
             <div id="video" />
+            {/* 视频转gif */}
             <Card.Grid style={gridStyle}>
               <VideoConverterCard />
             </Card.Grid>
+            {/* 画板 */}
             <Card.Grid style={gridStyle}>
               <RecordCanvasCard />
             </Card.Grid>

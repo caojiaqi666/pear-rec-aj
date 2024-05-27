@@ -1,6 +1,7 @@
 export interface Lang {
   magnifier_position_label: string;
   operation_ok_title: string;
+  operation_long_cut_title: string;
   operation_cancel_title: string;
   operation_save_title: string;
   operation_redo_title: string;
@@ -32,6 +33,7 @@ const zhCN: Lang = {
   operation_search_title: '搜图',
   operation_scan_title: '扫码',
   operation_pin_title: '贴图',
+  operation_long_cut_title: '滚动截图'
 };
 
 export default zhCN;

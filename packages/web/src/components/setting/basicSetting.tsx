@@ -92,8 +92,8 @@ const BasicSetting = (props) => {
             onChange={handleChangeLanguage}
             options={[
               { value: 'zh', label: '中文' },
-              { value: 'en', label: 'EN' },
-              { value: 'de', label: 'Deutsch' },
+              { value: 'en', label: 'English (US)' },
+              // { value: 'de', label: 'Deutsch' },
             ]}
           />
         </Form.Item>

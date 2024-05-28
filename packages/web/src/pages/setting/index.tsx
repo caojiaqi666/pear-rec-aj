@@ -25,11 +25,11 @@ const Setting = () => {
   }, [user]);
 
   const items = [
-    {
-      key: 'userSetting',
-      label: t('setting.userSetting'),
-      children: UserSetting,
-    },
+    // {
+    //   key: 'userSetting',
+    //   label: t('setting.userSetting'),
+    //   children: UserSetting,
+    // },
     {
       key: 'basicSetting',
       label: t('setting.basicSetting'),
@@ -95,7 +95,7 @@ const Setting = () => {
 
   return (
     <div className={`${styles.setting} ${window.isElectron ? styles.electron : styles.web}`}>
-      <Tabs
+      {/* <Tabs
         tabPosition="left"
         items={items.map((tab, i) => {
           return {
@@ -105,7 +105,9 @@ const Setting = () => {
             forceRender: tab.forceRender,
           };
         })}
-      />
+      /> */}
+      <BasicSetting user={user} setting={setting}></BasicSetting>
+      <ShortcutSetting user={user} setting={setting}></ShortcutSetting>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { FolderOpenOutlined } from '@ant-design/icons';
-import { Button, Form, Input, Select, Switch } from 'antd';
+import { Button, Form, Input, Select, Switch, Checkbox } from 'antd';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { db } from '../../db';
@@ -60,6 +60,17 @@ const BasicSetting = (props) => {
     window.electronAPI?.sendSeSetLanguage(lng);
   }
 
+  const formItemLayout = {
+    labelCol: {
+      xs: { span: 24 },
+      sm: { span: 8 },
+    },
+    wrapperCol: {
+      xs: { span: 24 },
+      sm: { span: 14 },
+    },
+  };
+
   return (
     <div className="basicForm">
       <Form
@@ -67,10 +78,17 @@ const BasicSetting = (props) => {
         initialValues={{
           layout: 'horizontal',
         }}
+        {...formItemLayout}
+        style={{
+          color: '#fff !important',
+        }}
+        colon={false}
       >
-        <Form.Item label={t('setting.language')} name="language">
+        <Form.Item
+          label={<span style={{ color: '#FFFFFF' }}>{t('setting.language')}:</span>}
+          name="language"
+        >
           <Select
-            style={{ width: 120 }}
             onChange={handleChangeLanguage}
             options={[
               { value: 'zh', label: '中文' },
@@ -79,20 +97,30 @@ const BasicSetting = (props) => {
             ]}
           />
         </Form.Item>
-        <Form.Item label={t('setting.filePath')} name="filePath">
+        {/* <Form.Item
+          label={<span style={{ color: '#FFFFFF' }}>{t('setting.filePath')}:</span>}
+          name="filePath"
+        >
           <TextArea className="filePathInput" readOnly onClick={handleSetFilePath} rows={3} />
-        </Form.Item>
-        <Form.Item label={t('setting.openFilePath')}>
+        </Form.Item> */}
+        <Form.Item label={<span style={{ color: '#FFFFFF' }}>{t('setting.openFilePath')}:</span>}>
           <Button icon={<FolderOpenOutlined />} onClick={handleOpenFilePath}>
             {t('setting.open')}
           </Button>
         </Form.Item>
-        <Form.Item label={t('setting.openAtLogin')} name="openAtLogin" valuePropName="checked">
+        {/* <Form.Item
+          label={<span style={{ color: '#FFFFFF' }}>{t('setting.openAtLogin')}:</span>}
+          name="openAtLogin"
+          valuePropName="checked"
+        >
           <Switch
             checkedChildren={t('setting.open')}
             unCheckedChildren={t('setting.close')}
             onChange={handleSetOpenAtLogin}
           />
+        </Form.Item> */}
+        <Form.Item name="openAtLogin" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
+          <Checkbox style={{ color: '#fff' }}>{t('setting.openAtLogin')}</Checkbox>
         </Form.Item>
       </Form>
     </div>

@@ -2,7 +2,7 @@ import { ExclamationCircleFilled } from '@ant-design/icons';
 import { Anchor, Modal, Card } from 'antd';
 import React, { useEffect, useRef, useState } from 'react';
 import EditGifCard from '../../components/card/editGifCard';
-import LongCutScreenCard from "../../components/card/longCutScreenCard";
+import LongCutScreenCard from '../../components/card/longCutScreenCard';
 import RecordAudioCard from '../../components/card/recordAudioCard';
 import RecordScreenCard from '../../components/card/recordScreenCard';
 import RecordVideoCard from '../../components/card/recordVideoCard';
@@ -22,6 +22,7 @@ import { db, defaultUser, defaultShortcut } from '../../db';
 import ininitApp from '../../pages/main';
 import styles from './index.module.scss';
 import { useTranslation } from 'react-i18next';
+import Setting from '../../assets/setting.png';
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -127,6 +128,10 @@ const Home: React.FC = () => {
     textAlign: 'center',
   };
 
+  function handleOpenSettingWin() {
+    window.electronAPI ? window.electronAPI.sendSeOpenWin() : window.open('/setting.html');
+  }
+
   return (
     <div className={`${styles.home} ${window.isElectron ? styles.electron : styles.web}`}>
       <div className="container">
@@ -185,17 +190,22 @@ const Home: React.FC = () => {
             </Card.Grid>
           </Card>
         </div> */}
-        <div className='cardItem'>
-          <CutScreenCard ref={cscRef} />
+        <div className="content">
+          <div className="cardItem">
+            <CutScreenCard ref={cscRef} />
+          </div>
+          <div className="cardItem">
+            <LongCutScreenCard ref={rscRef} />
+          </div>
+          <div className="cardItem">
+            <EditImageCard />
+          </div>
         </div>
-        <div className='cardItem'>
-          <LongCutScreenCard ref={rscRef} />
-        </div>
-        <div className='cardItem'>
-          <EditImageCard />
+        <div className="operationFooter">
+          <img className="operationItem" src={Setting} alt="" onClick={handleOpenSettingWin} />
         </div>
       </div>
-      {/* <HomeFooter /> */}
+      <HomeFooter />
     </div>
   );
 };

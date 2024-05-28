@@ -37,8 +37,8 @@ export const LOG_PATH = path.join(PEAR_FILES_PATH, 'log');
 export const WIN_CONFIG = {
   main: {
     html: path.join(process.env.DIST, 'index.html'),
-    width: 1320,
-    height: 820,
+    width: 820,
+    height: 280,
     autoHideMenuBar: true,
     maximizable: false,
     resizable: false,

@@ -2,6 +2,7 @@ import { EditOutlined } from '@ant-design/icons';
 import { Card, Modal } from 'antd';
 import { forwardRef, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import EditImage from '../../assets/editImage.png';
 
 const EditImageCard = forwardRef((props: any, ref: any) => {
   const { t } = useTranslation();
@@ -27,9 +28,22 @@ const EditImageCard = forwardRef((props: any, ref: any) => {
   }
 
   return (
-    <div className="cardContent">
-      <EditOutlined className="cardIcon" onClick={() => fileRef.current.click()} />
-      <div className="cardTitle">{t('home.editImg')}</div>
+    <div
+      style={{
+        width: '160px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+      }}
+    >
+      <img
+        style={{ marginTop: '29px' }}
+        src={EditImage}
+        alt=""
+        onClick={() => fileRef.current.click()}
+      />
+      <div style={{ marginTop: '20px', color: "#fff" }}>{t('home.editImg')}</div>
       <input
         type="file"
         ref={fileRef}

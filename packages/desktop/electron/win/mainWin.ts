@@ -5,7 +5,7 @@ let mainWin: BrowserWindow | null = null;
 
 const createMainWin = (): BrowserWindow => {
   mainWin = new BrowserWindow({
-    title: 'pear-rec',
+    title: 'iFoxPaw SnipTaker',
     icon: ICON,
     width: WIN_CONFIG.main.width, // 宽度(px)
     height: WIN_CONFIG.main.height, // 高度(px)

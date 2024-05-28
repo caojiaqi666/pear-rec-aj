@@ -5,7 +5,13 @@
       position: relative;
       overflow: hidden;
       padding: 0 10px 0px 10px;
-      height: calc(100% - 40px);
+      height: 100%;
+      background-color: #434343;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+
       .wavesurfer1 {
         position: absolute;
         bottom: 0;
@@ -71,6 +77,15 @@
         height: calc(100% - 50px);
         overflow-x: hidden;
         overflow-y: scroll;
+      }
+
+      .cardItem {
+        height: 145px;
+        background-color: #5E5D5D;
+        border-radius: 8px;
+        background: #5E5D5D;
+        box-shadow: 0px 0px 8px 0px rgba(24,24,24,0.2);
+        border-radius: 8px;
       }
     }
     .extra {

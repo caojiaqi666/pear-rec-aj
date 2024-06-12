@@ -164,10 +164,14 @@ const RecordAudioCard = forwardRef(() => {
       record.fileType == 'gif' ||
       record.fileType == 'ei'
     ) {
-      window.isElectron
-        ? (await handleExistsRecord(record)) &&
-          window.electronAPI.sendViOpenWin({ recordId: record.id })
-        : window.open(`/viewImage.html?recordId=${record.id}`);
+      // window.isElectron
+      //   ? (await handleExistsRecord(record)) &&
+      //     window.electronAPI.sendViOpenWin({ recordId: record.id })
+      //   : window.open(`/viewImage.html?recordId=${record.id}`);
+        window.isElectron
+          ? (await handleExistsRecord(record)) &&
+            window.electronAPI.sendViOpenWin({ recordId: record.id })
+          : console.log(1);
     }
     if (record.fileType == 'rs') {
       window.isElectron

@@ -1,4 +1,5 @@
 import { DesktopOutlined, DownOutlined } from '@ant-design/icons';
+import LongCut from '../../assets/longCut.png';
 import type { MenuProps } from 'antd';
 import { Card, Dropdown, Space } from 'antd';
 import { forwardRef, useImperativeHandle } from 'react';
@@ -50,20 +51,19 @@ const RecordScreenCard = forwardRef((props: any, ref: any) => {
   }
 
   return (
-    <div className="cardContent">
-      <span className="extra" onClick={handleFullScreenClick}>
-        {t('home.fullScreen')}
-      </span>
-      <div className="cardContent">
-        {/*<Dropdown menu={{ items, onClick }}>*/}
-        {/*  <Space>*/}
-        {/*    */}
-        {/*    <DownOutlined className="cardToggle" />*/}
-        {/*  </Space>*/}
-        {/*</Dropdown>*/}
-        <DesktopOutlined className="cardIcon" onClick={() => handleClipScreenClick('video')} />
-        <div className="cardTitle">{t('home.screenRecording')}</div>
-      </div>
+    <div
+      style={{
+        width: '160px',
+        margin: '0 auto',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+      }}
+      onClick={() => handleClipScreenClick('video')}
+    >
+      <img style={{ marginTop: '22px' }} src={LongCut} alt="" />
+      <div style={{ color: '#fff', marginTop: '12px' }}>{t('home.screenRecording')}</div>
     </div>
   );
 });

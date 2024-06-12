@@ -195,7 +195,7 @@ const Home: React.FC = () => {
             <CutScreenCard ref={cscRef} />
           </div>
           <div className="cardItem">
-            <LongCutScreenCard ref={rscRef} />
+            <RecordScreenCard ref={rscRef} />
           </div>
           <div className="cardItem">
             <EditImageCard />

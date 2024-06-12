@@ -29,7 +29,6 @@ export default [
   Undo,
   Redo,
   '|',
-  LongCut,
   Save,
   Cancel,
   Ok,

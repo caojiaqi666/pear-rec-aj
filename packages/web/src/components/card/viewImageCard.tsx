@@ -64,7 +64,7 @@ const ViewImageCard = forwardRef((props: any, ref: any) => {
         okText: t('modal.ok'),
         cancelText: t('modal.cancel'),
         onOk() {
-          window.open(`/viewImage.html?imgUrl=${encodeURIComponent(imgUrl)}`);
+          // window.open(`/viewImage.html?imgUrl=${encodeURIComponent(imgUrl)}`);
         },
       });
     }

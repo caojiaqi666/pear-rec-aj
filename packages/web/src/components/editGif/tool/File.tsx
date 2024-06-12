@@ -103,7 +103,7 @@ const File = forwardRef<any>((props, ref) => {
             okText: t('modal.ok'),
             cancelText: t('modal.cancel'),
             onOk() {
-              window.open(`/viewImage.html?recordId=${recordId}`);
+              // window.open(`/viewImage.html?recordId=${recordId}`);
             },
             onCancel() {
               console.log('Cancel');

@@ -91,7 +91,7 @@ const ViewImage = () => {
     showUploadList: false,
     beforeUpload: (file) => {
       const imgUrl = window.URL.createObjectURL(file);
-      window.open(`/viewImage.html?imgUrl=${imgUrl}`);
+      // window.open(`/viewImage.html?imgUrl=${imgUrl}`);
       setImgs([imgUrl]);
       return false;
     },

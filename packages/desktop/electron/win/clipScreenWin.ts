@@ -11,7 +11,7 @@ let clipScreenWin: BrowserWindow | null = null;
 
 function createClipScreenWin(): BrowserWindow {
   clipScreenWin = new BrowserWindow({
-    title: 'iFoxPaw SnipTaker',
+    title: 'SnipTaker',
     icon: ICON,
     autoHideMenuBar: WIN_CONFIG.clipScreen.autoHideMenuBar, // 自动隐藏菜单栏
     frame: WIN_CONFIG.clipScreen.frame, // 无边框窗口

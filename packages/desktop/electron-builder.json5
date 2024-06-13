@@ -2,8 +2,8 @@
  * @see https://www.electron.build/configuration/configuration
  */
 {
-  appId: 'com.electron.iFoxPaw SnipTaker',
-  productName: 'iFoxPaw SnipTaker',
+  appId: 'com.electron.SnipTaker',
+  productName: 'SnipTaker',
   copyright: 'Copyright © 2024 ${author}',
   asar: true,
   directories: {
@@ -40,7 +40,7 @@
   },
   publish: {
     provider: 'github',
-    repo: 'iFoxPaw SnipTaker',
+    repo: 'SnipTaker',
     owner: '027xiguapi',
   },
 }

@@ -6,7 +6,7 @@ export default defineConfig({
   vite: {
     plugins: [react()],
   },
-  title: 'iFoxPaw SnipTaker',
+  title: 'SnipTaker',
   base: '/pear-rec',
   description: '一个跨平台的截图、录屏、录音、录像软件',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],

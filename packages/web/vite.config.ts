@@ -90,8 +90,8 @@ export default ({ mode }) => {
           enabled: true,
         },
         manifest: {
-          name: 'iFoxPaw SnipTaker',
-          short_name: 'iFoxPaw SnipTaker',
+          name: 'SnipTaker',
+          short_name: 'SnipTaker',
           description:
             'pear-rec is a software with screenshot, screen recording, audio recording and video recording.',
           theme_color: '#fff',

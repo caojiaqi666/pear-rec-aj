@@ -149,7 +149,9 @@ function downloadVideo(file) {
           fileName: fileName,
           filePath: savePath,
         });
-        console.log(`${savePath}:录像保存成功`);
+        console.log(`${savePath}:录像保存成功2`);
+      }else if(state==='cancelled'){
+        recorderScreenWin.webContents.send('rs:send-file', null);
       }
     });
   });

@@ -27,7 +27,7 @@ const ScreenRecorder = (props) => {
   const timer = useTimer();
   const videoRef = useRef<HTMLVideoElement>();
   const mediaStream = useRef<MediaStream>(); // 视频和系统声音流
-  const micStream = useRef<MediaStream>(); // 麦克风声音流
+  const micStream = useRef<MediaStream | null>(); // 麦克风声音流
   const combinedStream = useRef<MediaStream>(); // 合并流
   const mediaRecorder = useRef<AVRecorder | null>(); // 媒体录制器对象
   const outputStream = useRef<any>();
@@ -53,6 +53,10 @@ const ScreenRecorder = (props) => {
     loadFfmpeg();
     user.id || getCurrentUser();
     window.electronAPI?.sendRsFile((file) => {
+      if(file===null){
+        setIsSave(false)
+        return 
+      }
       addRecord(file);
     });
     return () => {
@@ -164,10 +168,10 @@ const ScreenRecorder = (props) => {
       worker.terminate();
     });
 
-    micStream.current = await navigator.mediaDevices.getUserMedia({
-      audio: true,
-    });
-
+    // micStream.current = await navigator.mediaDevices.getUserMedia({
+    //   audio: false,
+    // });
+    micStream.current = null;
     setCombinedStream(videoStream);
   }
 
@@ -180,8 +184,9 @@ const ScreenRecorder = (props) => {
       const systemSoundSource = audioCtx.createMediaStreamSource(mediaStream.current);
       const systemSoundDestination = audioCtx.createMediaStreamDestination();
       systemSoundSource.connect(systemSoundDestination);
-      const micSoundSource = audioCtx.createMediaStreamSource(micStream.current);
-      micSoundSource.connect(systemSoundDestination);
+      const micSoundSource =
+        micStream.current && audioCtx.createMediaStreamSource(micStream.current);
+      micStream.current && micSoundSource.connect(systemSoundDestination);
       // 合并音频流与视频流
       combinedStream.current = new MediaStream([
         ...videoStream.getVideoTracks(),
@@ -201,7 +206,7 @@ const ScreenRecorder = (props) => {
       // systemSoundSource.connect(systemSoundDestination);
       combinedStream.current = new MediaStream([
         ...videoStream.getVideoTracks(),
-        ...micStream.current.getAudioTracks(),
+        ...(micStream.current ? micStream.current.getAudioTracks() : []),
       ]);
     }
   }
@@ -278,15 +283,20 @@ const ScreenRecorder = (props) => {
 
   // 停止录制，并将录制的音频数据导出为 Blob 对象
   async function handleStopRecord() {
-    setIsSave(true);
-    timer.reset();
-    if (isRecording) {
-      await mediaRecorder.current.stop();
-      setIsRecording(false);
-    }
-    worker.postMessage({
+    try {
+      setIsSave(true);
+      timer.reset();
+      if (isRecording) {
+        await mediaRecorder.current.stop();
+        setIsRecording(false);
+      }
+      worker.postMessage({
       status: 'stop',
-    });
+      });
+    } catch(e) {
+      setIsSave(false);
+      throw new Error(e.message);
+    }
   }
 
   async function loadFfmpeg() {

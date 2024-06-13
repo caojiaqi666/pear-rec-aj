@@ -133,7 +133,7 @@ export default function UI() {
               if (avCvs == null) return;
               const mediaStream = await navigator.mediaDevices.getUserMedia({
                 video: true,
-                audio: true,
+                audio: false,
               });
               const vs = new VideoSprite('userMedia', mediaStream, {
                 audioCtx: avCvs.spriteManager.audioCtx,
@@ -149,11 +149,12 @@ export default function UI() {
 
               const source = await window.electronAPI?.invokeRsGetDesktopCapturerSource();
               const constraints: any = {
-                audio: {
-                  mandatory: {
-                    chromeMediaSource: 'desktop',
-                  },
-                },
+                // audio: {
+                //   mandatory: {
+                //     chromeMediaSource: 'desktop',
+                //   },
+                // },
+                audio:false,
                 video: {
                   mandatory: {
                     chromeMediaSource: 'desktop',
@@ -165,7 +166,7 @@ export default function UI() {
                 ? await navigator.mediaDevices.getUserMedia(constraints)
                 : await navigator.mediaDevices.getDisplayMedia({
                     video: true,
-                    audio: true,
+                    audio: false,
                   });
               const vs = new VideoSprite('display', mediaStream, {
                 audioCtx: avCvs.spriteManager.audioCtx,

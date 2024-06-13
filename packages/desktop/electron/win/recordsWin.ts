@@ -6,7 +6,7 @@ let recordsWin: BrowserWindow | null = null;
 
 function createRecordsWin(): BrowserWindow {
   recordsWin = new BrowserWindow({
-    title: 'pear-rec 记录',
+    title: 'SnipTaker 记录',
     icon: ICON,
     width: WIN_CONFIG.records.width,
     height: WIN_CONFIG.records.height,

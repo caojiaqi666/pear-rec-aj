@@ -5,7 +5,7 @@ let videoConverterWin: BrowserWindow | null = null;
 
 function createVideoConverterWin(search?: any): BrowserWindow {
   videoConverterWin = new BrowserWindow({
-    title: 'pear-rec 图片编辑',
+    title: 'SnipTaker 图片编辑',
     icon: ICON,
     height: WIN_CONFIG.videoConverter.height,
     width: WIN_CONFIG.videoConverter.width,

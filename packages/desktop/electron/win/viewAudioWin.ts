@@ -6,7 +6,7 @@ let viewAudioWin: BrowserWindow | null = null;
 
 function createViewAudioWin(search?: any): BrowserWindow {
   viewAudioWin = new BrowserWindow({
-    title: 'pear-rec 音频',
+    title: 'SnipTaker 音频',
     icon: ICON,
     width: WIN_CONFIG.viewAudio.width,
     height: WIN_CONFIG.viewAudio.height,

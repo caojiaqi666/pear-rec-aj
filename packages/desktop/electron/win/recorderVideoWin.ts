@@ -5,7 +5,7 @@ let recorderVideoWin: BrowserWindow | null = null;
 
 function createRecorderVideoWin(): BrowserWindow {
   recorderVideoWin = new BrowserWindow({
-    title: 'pear-rec 录像',
+    title: 'SnipTaker 录像',
     icon: ICON,
     height: WIN_CONFIG.recorderVideo.height,
     width: WIN_CONFIG.recorderVideo.width,

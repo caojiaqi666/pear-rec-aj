@@ -6,7 +6,7 @@ let editImageWin: BrowserWindow | null = null;
 
 function createEditImageWin(search?: any): BrowserWindow {
   editImageWin = new BrowserWindow({
-    title: 'pear-rec 图片编辑',
+    title: 'SnipTaker 图片编辑',
     icon: ICON,
     height: WIN_CONFIG.editImage.height,
     width: WIN_CONFIG.editImage.width,

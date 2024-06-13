@@ -5,7 +5,7 @@ let editGifWin: BrowserWindow | null = null;
 
 function createEditGifWin(search?: any): BrowserWindow {
   editGifWin = new BrowserWindow({
-    title: 'pear-rec 动图编辑',
+    title: 'SnipTaker 动图编辑',
     icon: ICON,
     height: WIN_CONFIG.editGif.height,
     width: WIN_CONFIG.editGif.width,

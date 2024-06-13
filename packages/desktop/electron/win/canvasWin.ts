@@ -5,7 +5,7 @@ let canvasWin: BrowserWindow | null = null;
 
 function createCanvasWin(): BrowserWindow {
   canvasWin = new BrowserWindow({
-    title: 'pear-rec 画布',
+    title: 'SnipTaker 画布',
     icon: ICON,
     height: WIN_CONFIG.canvas.height,
     width: WIN_CONFIG.canvas.width,

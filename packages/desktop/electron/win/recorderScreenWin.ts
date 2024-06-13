@@ -16,7 +16,7 @@ function createRecorderScreenWin(search?: any): BrowserWindow {
   let recorderScreenWinY = y + height;
 
   recorderScreenWin = new BrowserWindow({
-    title: 'pear-rec 录屏',
+    title: 'SnipTaker 录屏',
     icon: ICON,
     x: recorderScreenWinX,
     y: recorderScreenWinY,

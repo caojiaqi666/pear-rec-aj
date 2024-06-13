@@ -10,7 +10,7 @@ function createPinImageWin(search?: any): BrowserWindow {
   const height = search?.height || 600;
 
   pinImageWin = new BrowserWindow({
-    title: 'pear-rec 图片',
+    title: 'SnipTaker 图片',
     icon: ICON,
     width: width,
     height: height,

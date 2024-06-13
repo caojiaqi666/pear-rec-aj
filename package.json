@@ -1,7 +1,7 @@
 {
-  "name": "pear-rec",
+  "name": "SnipTaker",
   "version": "1.4.0",
-  "description": " pear-rec is a cross platform software with screenshot, screen recording, audio recording and video recording.",
+  "description": "SnipTaker is a cross platform software with screenshot, screen recording, audio recording and video recording.",
   "scripts": {
     "start:desktop": "concurrently --names \"WEB,DESKTOP\" -c \"red,blue\" \"npm run dev:web\" \"wait-on tcp:0.0.0.0:9191 && pnpm run dev:desktop\"",
     "dev:desktop": "pnpm run -C packages/desktop dev",
@@ -58,13 +58,5 @@
     "gif.js"
   ],
   "author": "027xiguapi <458813868@qq.com>",
-  "homepage": "https://027xiguapi.github.io/pear-rec",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:027xiguapi/pear-rec.git"
-  },
-  "bugs": {
-    "url": "https://github.com/027xiguapi/pear-rec/issues"
-  },
   "license": "Apache-2.0"
 }

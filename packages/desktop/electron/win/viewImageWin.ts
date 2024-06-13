@@ -8,7 +8,7 @@ let viewImageWinMap = new Map<number, BrowserWindow | null>();
 
 function createViewImageWin(search?: any): BrowserWindow {
   let viewImageWin = new BrowserWindow({
-    title: 'pear-rec 图片',
+    title: 'SnipTaker 图片',
     icon: ICON,
     autoHideMenuBar: WIN_CONFIG.viewImage.autoHideMenuBar, // 自动隐藏菜单栏
     webPreferences: {

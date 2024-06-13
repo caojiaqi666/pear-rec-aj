@@ -5,7 +5,7 @@ let pinVideoWin: BrowserWindow | null = null;
 
 function createPinVideoWin(search?: any): BrowserWindow {
   pinVideoWin = new BrowserWindow({
-    title: 'pear-rec 视频',
+    title: 'SnipTaker 视频',
     icon: ICON,
     height: WIN_CONFIG.pinVideo.height,
     width: WIN_CONFIG.pinVideo.width,

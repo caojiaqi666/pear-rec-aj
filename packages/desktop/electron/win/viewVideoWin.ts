@@ -6,7 +6,7 @@ let viewVideoWin: BrowserWindow | null = null;
 
 function createViewVideoWin(search?: any): BrowserWindow {
   viewVideoWin = new BrowserWindow({
-    title: 'pear-rec 视频',
+    title: 'SnipTaker 视频',
     icon: ICON,
     autoHideMenuBar: WIN_CONFIG.viewVideo.autoHideMenuBar, // 自动隐藏菜单栏
     webPreferences: {

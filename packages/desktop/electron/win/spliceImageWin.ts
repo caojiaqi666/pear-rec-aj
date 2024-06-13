@@ -5,7 +5,7 @@ let spliceImageWin: BrowserWindow | null = null;
 
 function createSpliceImageWin(): BrowserWindow {
   spliceImageWin = new BrowserWindow({
-    title: 'pear-rec 拼接图片',
+    title: 'SnipTaker 拼接图片',
     icon: ICON,
     height: WIN_CONFIG.spliceImage.height,
     width: WIN_CONFIG.spliceImage.width,

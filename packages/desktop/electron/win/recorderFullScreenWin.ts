@@ -5,7 +5,7 @@ let recorderFullScreenWin: BrowserWindow | null = null;
 
 function createRecorderFullScreenWin(): BrowserWindow {
   recorderFullScreenWin = new BrowserWindow({
-    title: 'pear-rec 录屏',
+    title: 'SnipTaker 录屏',
     icon: ICON,
     height: WIN_CONFIG.recorderFullScreen.height,
     width: WIN_CONFIG.recorderFullScreen.width,

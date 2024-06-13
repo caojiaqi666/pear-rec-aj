@@ -5,7 +5,7 @@ let recorderAudioWin: BrowserWindow | null = null;
 
 function createRecorderAudioWin(): BrowserWindow {
   recorderAudioWin = new BrowserWindow({
-    title: 'pear-rec 录音',
+    title: 'SnipTaker 录音',
     icon: ICON,
     width: WIN_CONFIG.recorderAudio.width, // 宽度(px), 默认值为 800
     height: WIN_CONFIG.recorderAudio.height, // 高度(px), 默认值为 600

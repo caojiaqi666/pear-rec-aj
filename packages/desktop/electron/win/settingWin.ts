@@ -5,7 +5,7 @@ let settingWin: BrowserWindow | null = null;
 
 function createSettingWin(): BrowserWindow {
   settingWin = new BrowserWindow({
-    title: 'pear-rec 设置',
+    title: 'SnipTaker 设置',
     icon: ICON,
     autoHideMenuBar: WIN_CONFIG.setting.autoHideMenuBar, // 自动隐藏菜单栏
     width: WIN_CONFIG.setting.width, // 宽度(px)

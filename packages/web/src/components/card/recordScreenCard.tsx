@@ -1,5 +1,5 @@
 import { DesktopOutlined, DownOutlined } from '@ant-design/icons';
-import LongCut from '../../assets/longCut.png';
+import RecordScreen from '../../assets/recordScreen.png';
 import type { MenuProps } from 'antd';
 import { Card, Dropdown, Space } from 'antd';
 import { forwardRef, useImperativeHandle } from 'react';
@@ -62,7 +62,7 @@ const RecordScreenCard = forwardRef((props: any, ref: any) => {
       }}
       onClick={() => handleClipScreenClick('video')}
     >
-      <img style={{ marginTop: '22px' }} src={LongCut} alt="" />
+      <img style={{ marginTop: '22px' }} src={RecordScreen} alt="" />
       <div style={{ color: '#fff', marginTop: '12px' }}>{t('home.screenRecording')}</div>
     </div>
   );

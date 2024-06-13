@@ -53,7 +53,7 @@ const Header = (props) => {
     <div
       className={`${props.className} ${styles.header} ${props.type == 'pin' ? 'no-drag' : 'drag'}`}
     >
-      <div className="left" title="pear-rec">
+      <div className="left" title="SnipTaker">
         <img className="logo" src={logo} alt="logo" />
         <span>REC</span>
       </div>

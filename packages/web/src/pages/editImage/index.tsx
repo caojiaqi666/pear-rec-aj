@@ -84,7 +84,7 @@ const EditImage = () => {
     if (window.isElectron) {
       window.electronAPI.sendEiDownloadImg(blob);
     } else {
-      const fileName = `pear-rec_${+new Date()}.png`;
+      const fileName = `sinptaker_${+new Date()}.png`;
       saveAs(blob, fileName);
       addRecord({ fileData: blob, fileName: fileName });
     }

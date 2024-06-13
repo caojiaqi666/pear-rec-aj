@@ -82,7 +82,7 @@ const File = forwardRef<any>((props, ref) => {
   async function handleDownloadFile(blob) {
     try {
       const record = {
-        fileName: `pear-rec_${+new Date()}.gif`,
+        fileName: `sinptaker_${+new Date()}.gif`,
         fileData: blob,
         fileType: 'eg',
         userId: user.id,
@@ -112,7 +112,7 @@ const File = forwardRef<any>((props, ref) => {
         }
       }
     } catch (err) {
-      saveAs(blob, `pear-rec_${+new Date()}.gif`);
+      saveAs(blob, `sinptaker_${+new Date()}.gif`);
     }
   }
 

@@ -11,7 +11,7 @@ const SpliceImage: React.FC = () => {
   const fileList = [];
 
   function handleSave(blob) {
-    saveAs(blob, `pear-rec_${+new Date()}.png`);
+    saveAs(blob, `sinptaker_${+new Date()}.png`);
   }
 
   return (

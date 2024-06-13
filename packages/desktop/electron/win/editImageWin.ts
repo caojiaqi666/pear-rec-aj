@@ -46,7 +46,7 @@ function closeEditImageWin() {
 }
 
 async function downloadImg(imgUrl: any) {
-  let defaultPath = `pear-rec_${+new Date()}.png`;
+  let defaultPath = `sinptaker_${+new Date()}.png`;
   let res = await dialog.showSaveDialog({
     defaultPath: defaultPath,
     filters: [{ name: 'Images', extensions: ['png', 'jpg', 'gif'] }],

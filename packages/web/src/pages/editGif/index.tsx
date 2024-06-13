@@ -128,7 +128,7 @@ const EditGif = () => {
 
   async function uploadFileCache(blob, frameDuration) {
     const cache = {
-      fileName: `pear-rec_${+new Date()}.png`,
+      fileName: `sinptaker_${+new Date()}.png`,
       fileData: blob,
       fileType: 'cg',
       duration: frameDuration,

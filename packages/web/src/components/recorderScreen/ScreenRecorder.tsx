@@ -238,7 +238,7 @@ const ScreenRecorder = (props) => {
 
   async function saveImg(blob) {
     try {
-      const fileName = `pear-rec_${+new Date()}.png`;
+      const fileName = `sinptaker_${+new Date()}.png`;
       const record = {
         fileName: fileName,
         fileData: blob,
@@ -322,7 +322,7 @@ const ScreenRecorder = (props) => {
     if (isLoad) {
       const ffmpeg = ffmpegRef.current;
       const input = 'input.mov';
-      const output = `pear-rec_${+new Date()}.gif`;
+      const output = `sinptaker_${+new Date()}.gif`;
       await ffmpeg.writeFile(input, await fetchFile(video));
       let rule = [];
       rule.push('-i', input, '-vf', `fps=${10},scale=-1:-1`, '-c:v', 'gif', output);
@@ -340,7 +340,7 @@ const ScreenRecorder = (props) => {
   }
 
   async function saveFile(blob) {
-    const fileName = `pear-rec_${+new Date()}.${type == 'gif' ? 'gif' : 'mp4'}`;
+    const fileName = `sinptaker_${+new Date()}.${type == 'gif' ? 'gif' : 'mp4'}`;
     if (window.isElectron) {
       const url = URL.createObjectURL(blob);
       window.electronAPI.sendRsDownloadVideo({ url, fileName: fileName });

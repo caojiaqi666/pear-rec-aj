@@ -69,7 +69,7 @@ export default function MP4Converter(props) {
     if (isLoad) {
       const ffmpeg = ffmpegRef.current;
       const input = 'input.mov';
-      const output = `pear-rec_${+new Date()}.gif`;
+      const output = `sinptaker_${+new Date()}.gif`;
       await ffmpeg.writeFile(input, await fetchFile(videoUrl));
       let rule = [];
       rule.push('-ss', `${time[0]}`);
@@ -141,7 +141,7 @@ export default function MP4Converter(props) {
   function handleSave(img) {
     const _img = {
       src: img.imgUrl,
-      name: `pear-rec_${+new Date()}.gif`,
+      name: `sinptaker_${+new Date()}.gif`,
       duration: (time[1] - time[0]).toFixed(1),
       frameNum: frameNum,
       width: videoInfo.width,

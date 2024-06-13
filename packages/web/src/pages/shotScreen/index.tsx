@@ -99,7 +99,7 @@ function ShotScreen() {
     (blob: Blob, bounds: Bounds) => {
       copyImg(blob);
       window.electronAPI?.sendSsCloseWin();
-      const fileName = `pear-rec_${+new Date()}.png`;
+      const fileName = `sinptaker_${+new Date()}.png`;
       if (window.isElectron) {
         blobToBase64(blob).then((base64Data) => {
           window.electronAPI.sendSsDownloadImg({
@@ -122,7 +122,7 @@ function ShotScreen() {
     (blob: Blob, bounds: Bounds) => {
       copyImg(blob);
       window.electronAPI?.sendSsCloseWin();
-      const fileName = `pear-rec_${+new Date()}.png`;
+      const fileName = `sinptaker_${+new Date()}.png`;
       if (window.isElectron) {
         blobToBase64(blob).then((base64Data) => {
           window.electronAPI.sendSsDownloadImg({
@@ -173,7 +173,7 @@ function ShotScreen() {
   );
 
   const onPin = useCallback(async (blob, bounds) => {
-    const fileName = `pear-rec_${+new Date()}.png`;
+    const fileName = `sinptaker_${+new Date()}.png`;
     window.electronAPI?.sendSsCloseWin();
     if (window.isElectron) {
       blobToBase64(blob).then((base64Data) => {

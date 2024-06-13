@@ -163,7 +163,7 @@ const RecorderScreen = () => {
   }
 
   async function saveFile(blob) {
-    const fileName = `pear-rec_${+new Date()}.webm`;
+    const fileName = `sinptaker_${+new Date()}.webm`;
     if (window.isElectron) {
       const url = URL.createObjectURL(blob);
       window.electronAPI.sendRfsDownloadVideo({ url, fileName: fileName });
@@ -261,7 +261,7 @@ const RecorderScreen = () => {
     const url = canvas.toDataURL('image/png');
     const link = document.createElement('a');
     link.href = url;
-    link.download = `pear-rec_${+new Date()}.png`;
+    link.download = `sinptaker_${+new Date()}.png`;
     link.click();
   }
 

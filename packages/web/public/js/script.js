@@ -158,7 +158,7 @@ const downloadBlob = (blob) => {
 	let a = document.createElement('a');
 	a.style.display = 'none';
 	a.href = url;
-	a.download = `pear-rec_${+new Date()}.mp4`;
+	a.download = `sinptaker_${+new Date()}.mp4`;
 	document.body.appendChild(a);
 	a.click();
 	window.URL.revokeObjectURL(url);

@@ -167,7 +167,7 @@ pnpm run clear
 - qq 群
 
 <p align="center">
-  <img src="https://027xiguapi.github.io/pear-rec/imgs/pear-rec_qq_qrcode.png" />
+  <img src="https://027xiguapi.github.io/pear-rec/imgs/sinptaker_qq_qrcode.png" />
 </p>
 
 ## 🤝 开源协议

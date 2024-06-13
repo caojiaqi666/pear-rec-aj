@@ -44,7 +44,7 @@ export default function UI() {
     (async () => {
       if (outputStream.current == null) return;
       const opfsFile = await mp4StreamToOPFSFile(outputStream.current);
-      window.isOffline ? saveAs(opfsFile, `pear-rec_${+new Date()}.mp4`) : saveFile(opfsFile);
+      window.isOffline ? saveAs(opfsFile, `sinptaker_${+new Date()}.mp4`) : saveFile(opfsFile);
     })();
   }, [outputStream.current]);
 
@@ -100,7 +100,7 @@ export default function UI() {
   }
 
   async function saveFile(blob) {
-    const fileName = `pear-rec_${+new Date()}.mp4`;
+    const fileName = `sinptaker_${+new Date()}.mp4`;
     if (window.isElectron) {
       const url = URL.createObjectURL(blob);
       window.electronAPI.sendRvDownloadVideo({ url, fileName: fileName });

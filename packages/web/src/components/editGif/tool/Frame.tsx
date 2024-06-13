@@ -33,7 +33,7 @@ const Frame = forwardRef<any>((props, ref) => {
   async function uploadFileCache(event) {
     const file = event.target.files[0];
     const cache = {
-      fileName: `pear-rec_${+new Date()}.png`,
+      fileName: `sinptaker_${+new Date()}.png`,
       fileData: file,
       fileType: 'cg',
       userId: user.id,

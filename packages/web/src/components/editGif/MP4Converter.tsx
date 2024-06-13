@@ -89,7 +89,7 @@ export default function MP4Converter(props) {
     const response = await fetch(imgUrl);
     const blob = await response.blob();
     const cache = {
-      fileName: `pear-rec_${+new Date()}.png`,
+      fileName: `sinptaker_${+new Date()}.png`,
       fileData: blob,
       fileType: 'cg',
       duration: Number((1000 / fps).toFixed(0)),

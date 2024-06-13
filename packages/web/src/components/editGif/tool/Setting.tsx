@@ -38,7 +38,7 @@ const Setting = forwardRef<any>((props, ref) => {
   function handleDownloadFrame() {
     const newVideoFrames = [...gifState.videoFrames];
     const videoFrame = newVideoFrames[gifState.index];
-    saveAs(URL.createObjectURL(videoFrame.fileData), `pear-rec_${+new Date()}.png`);
+    saveAs(URL.createObjectURL(videoFrame.fileData), `sinptaker_${+new Date()}.png`);
   }
 
   function handleEditFrame(blob) {

@@ -266,7 +266,7 @@ const ViewImage = () => {
   function handleDownload() {
     const img = imgs[initialViewIndexRef.current];
     const imgUrl = img?.url;
-    const fileName = img?.fileName || `pear-rec_${+new Date()}.png`;
+    const fileName = img?.fileName || `sinptaker_${+new Date()}.png`;
     saveAs(imgUrl, fileName);
   }
 

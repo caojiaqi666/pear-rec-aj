@@ -86,7 +86,7 @@ pnpm run clear
 - QQ group
 
 <p align="center">
-  <img src="https://027xiguapi.github.io/pear-rec/imgs/pear-rec_qq_qrcode.png" />
+  <img src="https://027xiguapi.github.io/pear-rec/imgs/sinptaker_qq_qrcode.png" />
 </p>
 
 ## Lizenz

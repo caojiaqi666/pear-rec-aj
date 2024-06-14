@@ -281,16 +281,16 @@ const Home: React.FC = () => {
         {/* right */}
         <div className={styles.btns}>
 
-          <a target="_blank" rel="noopener noreferrer" href="https://www.sniptaker.com/buy.html">
-            <img className={styles.colorIcon} src={Buy} alt="Buy" />
+          <a target="_blank"  rel="noopener noreferrer" href="https://www.sniptaker.com/buy.html">
+            <img  title={t('downmenu.purchase')} className={styles.colorIcon} src={Buy} alt="Buy" />
           </a>
           <a target="_blank" rel="noopener noreferrer" href="https://www.sniptaker.com/user-guide.html">
-            <img className={styles.colorIcon} src={Help} alt="Help" />
+            <img  title={t('downmenu.onlineHelp')} className={styles.colorIcon} src={Help} alt="Help" />
           </a>
 
 
 
-          <img className={styles.colorIcon} src={User} onClick={() => openRegisterWindow()} alt="User" />
+          <img className={styles.colorIcon} title={t('downmenu.register')} src={User} onClick={() => openRegisterWindow()} alt="User" />
 
           <Dropdown
             menu={{

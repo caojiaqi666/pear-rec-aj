@@ -1,4 +1,12 @@
-import Icon, { CloseOutlined, ExclamationCircleFilled, MenuOutlined, MinusOutlined, QuestionCircleOutlined, TransactionOutlined, UserOutlined } from '@ant-design/icons';
+import Icon, {
+  CloseOutlined,
+  ExclamationCircleFilled,
+  MenuOutlined,
+  MinusOutlined,
+  QuestionCircleOutlined,
+  TransactionOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
 import { Anchor, Modal, Card, Layout, Space, Dropdown } from 'antd';
 import React, { useEffect, useRef, useState } from 'react';
 import EditGifCard from '../../components/card/editGifCard';
@@ -141,7 +149,6 @@ const Home: React.FC = () => {
     window.electronAPI ? window.electronAPI.sendSeOpenWin() : window.open('/setting.html');
   }
 
-
   const headerStyle: React.CSSProperties = {
     width: '100%',
     color: '#fff',
@@ -150,7 +157,7 @@ const Home: React.FC = () => {
     lineHeight: '30px',
     backgroundColor: '#333333',
     display: 'flex',
-    justifyContent: "space-between",
+    justifyContent: 'space-between',
   };
 
   // 头部任务栏操作
@@ -160,7 +167,6 @@ const Home: React.FC = () => {
     window.electronAPI.handleMinimize();
   };
 
-
   // 关闭窗口
   const closeWindow = () => {
     console.log('窗口关闭');
@@ -169,13 +175,13 @@ const Home: React.FC = () => {
 
   // 菜单
   const openRegisterWindow = () => {
-    window.electronAPI.sendRegisterOpenWin()
+    window.electronAPI.sendRegisterOpenWin();
   };
   const openSettingsWindow = () => {
     handleOpenSettingWin();
   };
   const openAboutWindow = () => {
-    window.electronAPI.sendAboutOpenWin()
+    window.electronAPI.sendAboutOpenWin();
   };
   const [setting, setSetting] = useState<any>({});
 
@@ -211,12 +217,12 @@ const Home: React.FC = () => {
         {
           key: 'chinese',
           label: '简体中文',
-          onClick: () => handleChangeLanguage('zh')
+          onClick: () => handleChangeLanguage('zh'),
         },
         {
           key: 'english',
           label: 'English',
-          onClick: () => handleChangeLanguage('en')
+          onClick: () => handleChangeLanguage('en'),
         },
       ],
     },
@@ -239,8 +245,11 @@ const Home: React.FC = () => {
     {
       key: 'OnlineHelp',
       label: (
-        <a target="_blank" rel="noopener noreferrer" href="https://www.sniptaker.com/user-guide.html">
-
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.sniptaker.com/user-guide.html"
+        >
           {t('downmenu.onlineHelp')}
         </a>
       ),
@@ -280,17 +289,35 @@ const Home: React.FC = () => {
         </div>
         {/* right */}
         <div className={styles.btns}>
-
-          <a target="_blank"  rel="noopener noreferrer" href="https://www.sniptaker.com/buy.html">
-            <img  title={t('downmenu.purchase')} className={styles.colorIcon} src={Buy} alt="Buy" />
+          <a
+            target="_blank"
+            className={styles.imgWrap}
+            rel="noopener noreferrer"
+            href="https://www.sniptaker.com/buy.html"
+          >
+            <img title={t('downmenu.purchase')} className={styles.colorIcon} src={Buy} alt="Buy" />
           </a>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.sniptaker.com/user-guide.html">
-            <img  title={t('downmenu.onlineHelp')} className={styles.colorIcon} src={Help} alt="Help" />
+          <a
+            target="_blank"
+            className={styles.imgWrap}
+            rel="noopener noreferrer"
+            href="https://www.sniptaker.com/user-guide.html"
+          >
+            <img
+              title={t('downmenu.onlineHelp')}
+              className={styles.colorIcon}
+              src={Help}
+              alt="Help"
+            />
           </a>
 
-
-
-          <img className={styles.colorIcon} title={t('downmenu.register')} src={User} onClick={() => openRegisterWindow()} alt="User" />
+          <img
+            className={styles.colorIcon}
+            title={t('downmenu.register')}
+            src={User}
+            onClick={() => openRegisterWindow()}
+            alt="User"
+          />
 
           <Dropdown
             menu={{
@@ -303,10 +330,13 @@ const Home: React.FC = () => {
           >
             <img className={styles.optIcon} src={Menu} alt="Menu" />
           </Dropdown>
-          <img className={styles.optIcon} onClick={() => minimize()} src={Minimize} alt="Minimize" />
+          <img
+            className={styles.optIcon}
+            onClick={() => minimize()}
+            src={Minimize}
+            alt="Minimize"
+          />
           <img className={styles.optIcon} onClick={() => closeWindow()} src={Close} alt="Close" />
-
-
         </div>
       </Header>
       <div>
@@ -381,7 +411,6 @@ const Home: React.FC = () => {
             <img className="operationItem" src={Setting} alt="" onClick={handleOpenSettingWin} />
           </div>
         </div>
-        <HomeFooter />
       </div>
     </Layout>
   );

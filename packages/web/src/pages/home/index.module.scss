@@ -1,7 +1,6 @@
 .home {
   overflow: hidden;
   :global {
-
     .container {
       position: relative;
       overflow: hidden;
@@ -19,7 +18,7 @@
         justify-content: center;
         align-items: center;
         gap: 30px;
-        margin-top: 26px;
+        margin-top: 46px;
       }
 
       .wavesurfer1 {
@@ -102,6 +101,7 @@
         background-color: #434343;
         padding: 12px 20px 20px 0;
         margin-right: 20px;
+        margin: 12px 0;
 
         .operationItem {
           width: 24px;
@@ -207,37 +207,45 @@
 .titlebar {
   -webkit-user-select: none;
   -webkit-app-region: drag;
-
 }
-.headerLeft{
+.headerLeft {
   height: 34px;
   display: flex;
   align-items: center;
   gap: 2px;
 }
-.logo{
+.logo {
   width: 18px;
   height: 18px;
-  margin-right:8px ;
+  margin-right: 8px;
 }
-.btns{
+.btns {
   height: 34px;
   display: flex;
   align-items: center;
   gap: 2px;
   -webkit-app-region: no-drag;
-  .colorIcon{
+
+  .imgWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row;
+  }
+  .colorIcon {
     width: 17px;
     height: 17px;
     background-repeat: no-repeat;
-    object-fit:contain;
-    margin:0 7px;
+    object-fit: contain;
+    margin: 0 7px;
+    cursor: pointer;
   }
-  .optIcon{
+  .optIcon {
     width: 14px;
     height: 14px;
-    object-fit:contain;
+    object-fit: contain;
     background-repeat: no-repeat;
-    margin:0 7px;
+    margin: 0 7px;
+    cursor: pointer;
   }
 }

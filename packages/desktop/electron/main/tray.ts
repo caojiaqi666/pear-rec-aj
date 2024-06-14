@@ -117,7 +117,7 @@ export function initTray(lng: string) {
       },
     },
   ]);
-  appIcon.setToolTip('梨子REC');
+  appIcon.setToolTip('SnipTaker');
   appIcon.setContextMenu(contextMenu);
   appIcon.addListener('click', function () {
     openMainWin();

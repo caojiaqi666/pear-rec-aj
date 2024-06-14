@@ -7,9 +7,8 @@ function createRegisterWin(): BrowserWindow {
   registerWin = new BrowserWindow({
     title: 'SnipTaker register',
     icon: ICON,
-    autoHideMenuBar: WIN_CONFIG.setting.autoHideMenuBar, // 自动隐藏菜单栏
-    width: WIN_CONFIG.setting.width, // 宽度(px)
-    height: WIN_CONFIG.setting.height, // 高度(px)
+    width: WIN_CONFIG.register.width, // 宽度(px)
+    height: WIN_CONFIG.register.height, // 高度(px)
     titleBarStyle: 'hidden',
     webPreferences: {
       preload,
@@ -20,7 +19,7 @@ function createRegisterWin(): BrowserWindow {
   if (url) {
     registerWin.loadURL(WEB_URL + 'register.html');
   } else {
-    registerWin.loadFile(WIN_CONFIG.setting.html);
+    registerWin.loadFile(WIN_CONFIG.register.html);
   }
 
   registerWin.webContents.setWindowOpenHandler(({ url }) => {

@@ -7,9 +7,8 @@ function createAboutWin(): BrowserWindow {
   aboutWin = new BrowserWindow({
     title: 'SnipTaker about',
     icon: ICON,
-    autoHideMenuBar: WIN_CONFIG.setting.autoHideMenuBar, // 自动隐藏菜单栏
-    width: WIN_CONFIG.setting.width, // 宽度(px)
-    height: WIN_CONFIG.setting.height, // 高度(px)
+    width: WIN_CONFIG.about.width, // 宽度(px)
+    height: WIN_CONFIG.about.height, // 高度(px)
     titleBarStyle: 'hidden',
     webPreferences: {
       preload,
@@ -20,7 +19,7 @@ function createAboutWin(): BrowserWindow {
   if (url) {
     aboutWin.loadURL(WEB_URL + 'about.html');
   } else {
-    aboutWin.loadFile(WIN_CONFIG.setting.html);
+    aboutWin.loadFile(WIN_CONFIG.about.html);
   }
 
   aboutWin.webContents.setWindowOpenHandler(({ url }) => {

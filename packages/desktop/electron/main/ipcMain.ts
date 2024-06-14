@@ -22,6 +22,8 @@ import * as recorderScreenWin from '../win/recorderScreenWin';
 import * as recorderVideoWin from '../win/recorderVideoWin';
 import * as recordsWin from '../win/recordsWin';
 import * as settingWin from '../win/settingWin';
+import * as aboutWin from '../win/aboutWin';
+import * as registerWin from '../win/registerWin';
 import * as shotScreenWin from '../win/shotScreenWin';
 import * as spliceImageWin from '../win/spliceImageWin';
 import * as viewAudioWin from '../win/viewAudioWin';
@@ -447,6 +449,23 @@ function initIpcMain() {
   });
   ipcMain.on('rfs:download-video', (e, file) => {
     recorderFullScreenWin.downloadVideo(file);
+  });
+
+  // 关于
+   ipcMain.on('about:open-win', () => {
+    aboutWin.closeAboutWin();
+    aboutWin.openAboutWin();
+  });
+  ipcMain.on('about:close-win', () => {
+    aboutWin.closeAboutWin();
+  });
+  // 注册
+   ipcMain.on('register:open-win', () => {
+    registerWin.closeRegisterWin();
+    registerWin.openRegisterWin();
+  });
+  ipcMain.on('register:close-win', () => {
+    registerWin.closeRegisterWin();
   });
 }
 

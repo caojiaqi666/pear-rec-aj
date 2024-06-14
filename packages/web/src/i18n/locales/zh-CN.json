@@ -149,5 +149,14 @@
   "shotScreen": {
     "image": "图片",
     "screen": "屏幕"
+  },
+  "downmenu": {
+    "language": "选择语言",
+    "purchase": "购买",
+    "register": "注册",
+    "settings": "设置",
+    "support": "技术支持",
+    "about": "关于",
+    "onlineHelp": "在线帮助"
   }
 }

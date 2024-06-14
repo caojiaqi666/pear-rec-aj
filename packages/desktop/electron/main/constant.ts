@@ -146,6 +146,18 @@ export const WIN_CONFIG = {
     width: 600,
     height: 380,
   },
+  about: {
+    html: path.join(process.env.DIST, 'about.html'),
+    width: 600,
+    height: 328,
+    titleBarStyle: 'hidden',
+  },
+  register: {
+    html: path.join(process.env.DIST, 'register.html'),
+    width: 739,
+    height: 575,
+    titleBarStyle: 'hidden',
+  },
   shotScreen: {
     html: path.join(process.env.DIST, 'shotScreen.html'),
     autoHideMenuBar: true, // 自动隐藏菜单栏

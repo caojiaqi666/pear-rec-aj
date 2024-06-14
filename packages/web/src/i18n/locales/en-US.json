@@ -149,5 +149,14 @@
   "shotScreen": {
     "image": "image",
     "screen": "screen"
+  },
+  "downmenu": {
+    "language": "Language",
+    "purchase": "Purchase",
+    "register": "Register",
+    "settings": "Settings",
+    "support": "Support",
+    "about": "About",
+    "onlineHelp": "Online Help"
   }
 }

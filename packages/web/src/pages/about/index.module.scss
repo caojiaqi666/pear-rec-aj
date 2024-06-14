@@ -1,0 +1,22 @@
+.titlebar {
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+
+}
+
+.btns{
+  height: 34px;
+  display: flex;
+
+  align-items: center;
+  gap: 2px;
+  -webkit-app-region: no-drag;
+
+  .optIcon{
+    width: 14px;
+    height: 14px;
+    object-fit:contain;
+    background-repeat: no-repeat;
+    margin:0 7px;
+  }
+}

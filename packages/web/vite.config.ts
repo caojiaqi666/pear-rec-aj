@@ -26,6 +26,8 @@ const buildOptionsProject = {
       editGif: resolve(__dirname, 'src/pages/editGif.html'),
       spliceImage: resolve(__dirname, 'src/pages/spliceImage.html'),
       canvas: resolve(__dirname, 'src/pages/canvas.html'),
+      about: resolve(__dirname, 'src/pages/about.html'),
+      register: resolve(__dirname, 'src/pages/register.html'),
     },
   },
   outDir: resolve(__dirname, 'dist'),

@@ -173,7 +173,13 @@ contextBridge.exposeInMainWorld('electronAPI', {
   // 头部任务栏
   handleMinimize: () => ipcRenderer.send('ma:minimize'),
   handleMaximize: () => ipcRenderer.send('ma:maximize'),
-  handleMcloseWindow: () => ipcRenderer.send('ma:closeWindow')
+  handleMcloseWindow: () => ipcRenderer.send('ma:closeWindow'),
+  // 关于
+  sendAboutOpenWin: () => ipcRenderer.send('about:open-win'),
+  sendAboutCloseWin: () => ipcRenderer.send('about:close-win'),
+  // 注册
+  sendRegisterOpenWin: () => ipcRenderer.send('register:open-win'),
+  sendRegisterCloseWin: () => ipcRenderer.send('register:close-win'),
 });
 
 

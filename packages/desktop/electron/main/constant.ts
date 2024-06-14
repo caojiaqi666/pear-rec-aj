@@ -19,8 +19,8 @@ export const DIST = path.join(DIST_ELECTRON, '../dist');
 
 export const PUBLIC = url ? path.join(DIST_ELECTRON, '../public') : process.env.DIST;
 
-export const ICON = path.join(PUBLIC, './imgs/icons/png/32x32.png');
-export const ICONx2 = path.join(PUBLIC, './imgs/icons/png/32x32.png');
+export const ICON = path.join(PUBLIC, './imgs/icons/png/logo.png');
+export const ICONx2 = path.join(PUBLIC, './imgs/icons/png/logo.png');
 
 export const DOCS_PATH = path.join(homedir(), 'Documents');
 

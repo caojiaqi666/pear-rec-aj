@@ -169,4 +169,13 @@ contextBridge.exposeInMainWorld('electronAPI', {
   offEuUpdateeError: (callback: any) => ipcRenderer.on('eu:update-error', callback),
   offEuDownloadProgress: (callback: any) => ipcRenderer.on('eu:download-progress', callback),
   offEuUpdateDownloaded: (callback: any) => ipcRenderer.on('eu:update-downloaded', callback),
+
+  // 头部任务栏
+  handleMinimize: () => ipcRenderer.send('ma:minimize'),
+  handleMaximize: () => ipcRenderer.send('ma:maximize'),
+  handleMcloseWindow: () => ipcRenderer.send('ma:closeWindow')
 });
+
+
+
+

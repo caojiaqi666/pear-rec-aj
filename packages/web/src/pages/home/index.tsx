@@ -1,5 +1,5 @@
-import { ExclamationCircleFilled } from '@ant-design/icons';
-import { Anchor, Modal, Card } from 'antd';
+import Icon, { CloseOutlined, ExclamationCircleFilled, MenuOutlined, MinusOutlined, QuestionCircleOutlined, TransactionOutlined, UserOutlined } from '@ant-design/icons';
+import { Anchor, Modal, Card,Layout ,Space  } from 'antd';
 import React, { useEffect, useRef, useState } from 'react';
 import EditGifCard from '../../components/card/editGifCard';
 import LongCutScreenCard from '../../components/card/longCutScreenCard';
@@ -23,6 +23,15 @@ import ininitApp from '../../pages/main';
 import styles from './index.module.scss';
 import { useTranslation } from 'react-i18next';
 import Setting from '../../assets/setting.png';
+import Logo from '../../assets/logo.png';
+import User from '../../assets/user.png';
+import Help from '../../assets/help.png';
+import Buy from '../../assets/buy.png';
+import Menu from '../../assets/menu.png';
+import Minimize from '../../assets/minimize.png';
+import Close from '../../assets/close.png';
+
+const { Header, Footer, Sider, Content } = Layout;
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -132,8 +141,56 @@ const Home: React.FC = () => {
     window.electronAPI ? window.electronAPI.sendSeOpenWin() : window.open('/setting.html');
   }
 
+
+  const headerStyle: React.CSSProperties = {
+width:'100%',
+    color: '#fff',
+    height: 34,
+    paddingInline: 20,
+    lineHeight: '30px',
+    backgroundColor: '#313D51',
+    display:'flex',
+    justifyContent:"space-between",
+  };
+
+  // 头部任务栏操作
+  // 最小化
+const minimize = () => {
+  console.log('窗口最小化');
+  window.electronAPI.handleMinimize();
+};
+
+
+// 关闭窗口
+const closeWindow = () => {
+  console.log('窗口关闭');
+  window.electronAPI.handleMcloseWindow();
+};
   return (
-    <div className={`${styles.home} ${window.isElectron ? styles.electron : styles.web}`}>
+    <Layout  className={`${styles.home} ${window.isElectron ? styles.electron : styles.web}`}>
+           <Header className={styles.titlebar} style={headerStyle}>
+            {/* left */}
+       <div className={styles.headerLeft}>
+       <img src={Logo} className={styles.logo} alt="Logo" />
+       <div>SnipTaker</div>
+       </div>
+            {/* right */}
+            <div className={styles.btns}>
+
+        
+          
+            <img className={styles.colorIcon} src={Buy} alt="Buy" />
+
+            <img className={styles.colorIcon} src={Help} alt="Help" />
+            <img className={styles.colorIcon} src={User} alt="User" />
+            <img className={styles.optIcon} src={Menu} alt="Menu" />
+            <img className={styles.optIcon}  onClick={()=>minimize()} src={Minimize} alt="Minimize" />
+            <img className={styles.optIcon} onClick={()=>closeWindow()}src={Close} alt="Close" />
+
+
+</div>
+           </Header>
+    <div>
       <div className="container">
         {/* <div className="content">
           <Card>
@@ -207,6 +264,7 @@ const Home: React.FC = () => {
       </div>
       <HomeFooter />
     </div>
+    </Layout>
   );
 };
 

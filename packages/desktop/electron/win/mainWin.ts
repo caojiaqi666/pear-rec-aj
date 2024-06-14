@@ -10,6 +10,7 @@ const createMainWin = (): BrowserWindow => {
     width: WIN_CONFIG.main.width, // 宽度(px)
     height: WIN_CONFIG.main.height, // 高度(px)
     autoHideMenuBar: WIN_CONFIG.main.autoHideMenuBar, // 自动隐藏菜单栏
+    titleBarStyle: 'hidden',
     maximizable: WIN_CONFIG.main.maximizable,
     resizable: WIN_CONFIG.main.resizable, // gnome下为false时无法全屏
     webPreferences: {
@@ -67,6 +68,9 @@ function hideMainWin() {
 function minimizeMainWin() {
   mainWin!.minimize();
 }
+function maximizeMainWin() {
+  mainWin!.maximize();
+}
 
 function focusMainWin() {
   if (!mainWin || mainWin?.isDestroyed()) {
@@ -96,5 +100,5 @@ export {
   hideMainWin,
   minimizeMainWin,
   openMainWin,
-  sendEuUpdateCanAvailable,
+  sendEuUpdateCanAvailable, maximizeMainWin
 };

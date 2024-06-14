@@ -73,6 +73,16 @@ function initIpcMain() {
   ipcMain.on('ma:close-win', () => {
     mainWin.closeMainWin();
   });
+  // 任务栏窗口操作
+  ipcMain.on('ma:minimize', () => {
+    mainWin.minimizeMainWin();
+  });
+  ipcMain.on('ma:maximize', () => {
+    mainWin.maximizeMainWin();
+  });
+  ipcMain.on('ma:closeWindow', () => {
+    mainWin.closeMainWin();
+  });
   // 录屏
   ipcMain.on('rs:open-win', (e, search) => {
     clipScreenWin.closeClipScreenWin();

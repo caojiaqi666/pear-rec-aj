@@ -91,7 +91,7 @@
     "resume": "resume",
     "pause": "pause",
     "save": "save",
-    "play": "play",
+    "play": "start",
     "width": "width",
     "height": "height",
     "shotScreen": "shotScreen",

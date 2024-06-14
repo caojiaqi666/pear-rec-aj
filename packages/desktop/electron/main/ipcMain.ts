@@ -35,6 +35,7 @@ import logger from './logger';
 import { showNotification } from './notification';
 import * as utils from './utils';
 import { PEAR_FILES_PATH } from './constant';
+import os from 'os';
 
 const selfWindws = async () =>
   await Promise.all(
@@ -452,7 +453,7 @@ function initIpcMain() {
   });
 
   // 关于
-   ipcMain.on('about:open-win', () => {
+  ipcMain.on('about:open-win', () => {
     aboutWin.closeAboutWin();
     aboutWin.openAboutWin();
   });
@@ -460,12 +461,42 @@ function initIpcMain() {
     aboutWin.closeAboutWin();
   });
   // 注册
-   ipcMain.on('register:open-win', () => {
+  ipcMain.on('register:open-win', () => {
     registerWin.closeRegisterWin();
     registerWin.openRegisterWin();
   });
   ipcMain.on('register:close-win', () => {
     registerWin.closeRegisterWin();
+  });
+
+  ipcMain.handle('get-mac-address', (event, arg) => {
+    try {
+      const networkInterfaces = os.networkInterfaces();
+      let macAddress = null;
+
+      for (const interfaceName in networkInterfaces) {
+        const networkInterface = networkInterfaces[interfaceName];
+
+        for (const interfaceInfo of networkInterface) {
+          // 只考虑IPv4地址且忽略内部接口
+          if (interfaceInfo.family === 'IPv4' && !interfaceInfo.internal) {
+            macAddress = interfaceInfo.mac;
+            // 通常我们只需要一个 MAC 地址，所以找到后就退出循环
+            break;
+          }
+        }
+
+        if (macAddress) break; // 如果已经找到 MAC 地址，则不需要继续检查其他接口
+      }
+
+      if (macAddress) {
+        return macAddress;
+      } else {
+        throw new Error('No MAC address found.');
+      }
+    } catch (err) {
+      return '';
+    }
   });
 }
 

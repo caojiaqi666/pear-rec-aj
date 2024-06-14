@@ -158,5 +158,29 @@
     "support": "技术支持",
     "about": "关于",
     "onlineHelp": "在线帮助"
+  },
+  "register": {
+    "need": "Registration is Need",
+    "thankYouDesc": "You’re using unregistered version, please purchase a license key to unlock the limitation. Thank you for your support!",
+    "Features": "Features",
+    "Unregister": "Unregister",
+    "Registered": "Registered",
+    "TakeScreenshot": "Take Screenshot",
+    "RecordScreen": "Record Screen",
+    "EditImage": "Edit Image",
+    "CustomArea": "Custom Area",
+    "email": "Licensed E-mail : ",
+    "LicenseKey": "License Key : ",
+    "Register": "Register",
+    "BuyNow": "Buy Now",
+    "successfulTitle": "Registration successful!",
+    "failedTitle": "Registration failed!",
+    "successfulDesc": "Thank you for your support. Now you can use all the features of the software.",
+    "fail1Desc": "Please check the network connection!",
+    "fail2Desc": "License key has been disabled!",
+    "fail3Desc": "License key exceeded PC limit!",
+    "fail4Desc": "License key is invalid! Please check it again or contact support team!",
+    "fail5Desc": "The license key is not associated with this email address",
+    "fail6Desc": "Unknown Error"
   }
 }

@@ -24,7 +24,7 @@ export const ICONx2 = path.join(PUBLIC, './imgs/icons/png/logo.png');
 
 export const DOCS_PATH = path.join(homedir(), 'Documents');
 
-export const PEAR_FILES_PATH = path.join(DOCS_PATH, 'Pear Files');
+export const PEAR_FILES_PATH = path.join(DOCS_PATH, 'Sniptaker  File');
 
 export const CONFIG_FILE_PATH = path.join(PEAR_FILES_PATH, `config.json`);
 

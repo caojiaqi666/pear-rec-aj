@@ -23,7 +23,7 @@ function initDefaultConfig() {
   const defaultConfig = {
     user: {
       uuid: uuidv5('https://www.w3.org/', uuidv5.URL),
-      userName: `pear-rec:user`,
+      userName: `SnipTaker:user`,
       userType: 1,
       createdAt: new Date(),
     },

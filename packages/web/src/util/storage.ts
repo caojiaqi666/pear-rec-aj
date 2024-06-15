@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 
-const __NEXT_NAME__ = "pear-rec";
+const __NEXT_NAME__ = "SnipTaker";
 /**
  * window.localStorage 浏览器永久缓存
  * @method set 设置永久缓存

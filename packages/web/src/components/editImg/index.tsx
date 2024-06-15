@@ -6,7 +6,81 @@ import ImageEditor from 'tui-image-editor';
 import 'tui-image-editor/dist/tui-image-editor.css';
 import UploadImg from '../upload/UploadImg';
 import styles from './index.module.scss';
-
+import { Local } from '@/util/storage';
+const locale_en = {
+  ZoomIn: 'Zoom In',
+  ZoomOut: 'Zoom Out',
+  Hand: 'Hand',
+  History: 'History',
+  Resize: 'Resize',
+  Crop: 'Crop',
+  DeleteAll: 'Delete All',
+  Delete: 'Delete',
+  Undo: 'Undo',
+  Redo: 'Redo',
+  Reset: 'Reset',
+  Flip: 'Flip',
+  Rotate: 'Rotate',
+  Draw: 'Draw',
+  Shape: 'Shape Annotation',
+  Icon: 'Icon Annotation',
+  Text: 'Text Annotation',
+  Mask: 'Mask',
+  Filter: 'Filter',
+  Bold: 'Bold',
+  Italic: 'Italic',
+  Underline: 'Underline',
+  Left: 'Left Align',
+  Center: 'Center Align',
+  Right: 'Right Align',
+  Color: 'Color',
+  'Text size': 'Text Size',
+  Custom: 'Custom',
+  Square: 'Square',
+  Apply: 'Apply',
+  Cancel: 'Cancel',
+  'Flip X': 'Flip X',
+  'Flip Y': 'Flip Y',
+  Range: 'Range',
+  Stroke: 'Stroke',
+  Fill: 'Fill',
+  Circle: 'Circle',
+  Triangle: 'Triangle',
+  Rectangle: 'Rectangle',
+  Free: 'Freeform',
+  Straight: 'Straight Line',
+  Arrow: 'Arrow',
+  'Arrow-2': 'Arrow 2',
+  'Arrow-3': 'Arrow 3',
+  'Star-1': 'Star 1',
+  'Star-2': 'Star 2',
+  Polygon: 'Polygon',
+  Location: 'Location',
+  Heart: 'Heart',
+  Bubble: 'Bubble',
+  'Custom icon': 'Custom Icon',
+  'Load Mask Image': 'Load Mask Image',
+  Grayscale: 'Grayscale',
+  Blur: 'Blur',
+  Sharpen: 'Sharpen',
+  Emboss: 'Emboss',
+  'Remove White': 'Remove White',
+  Distance: 'Distance',
+  Brightness: 'Brightness',
+  Noise: 'Noise',
+  'Color Filter': 'Color Filter',
+  Sepia: 'Sepia',
+  Sepia2: 'Sepia 2',
+  Invert: 'Invert',
+  Pixelate: 'Pixelate',
+  Threshold: 'Threshold',
+  Tint: 'Tint',
+  Multiply: 'Multiply',
+  Blend: 'Blend Mode',
+  Width: 'Width',
+  Height: 'Height',
+  'Lock Aspect Ratio': 'Lock Aspect Ratio',
+  };
 const locale_zh = {
   ZoomIn: '放大',
   ZoomOut: '缩小',
@@ -160,7 +234,7 @@ const customTheme = {
 };
 
 const EditImage = (props) => {
-  const { t } = useTranslation();
+  const { t,i18n } = useTranslation();
   const [instance, setInstance] = useState<any>('');
 
   useEffect(() => {
@@ -176,7 +250,7 @@ const EditImage = (props) => {
         },
         initMenu: 'draw', // 默认打开的菜单项
         menuBarPosition: 'bottom', // 菜单所在的位置
-        locale: locale_zh, // 本地化语言为中文
+        locale: Local.get('i18n') === 'zh'?locale_zh:locale_en, // 本地化语言
         theme: customTheme, // 自定义样式
       },
       cssMaxWidth: 1000,

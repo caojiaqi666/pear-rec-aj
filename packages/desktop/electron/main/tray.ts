@@ -9,6 +9,7 @@ import { openViewImageWin } from '../win/viewImageWin';
 import { openViewVideoWin } from '../win/viewVideoWin';
 import { openViewAudioWin } from '../win/viewAudioWin';
 import { openSettingWin } from '../win/settingWin';
+import { openEditImageWin } from '../win/editImageWin';
 import * as zhCN from '../i18n/zh-CN.json';
 import * as enUS from '../i18n/en-US.json';
 import * as deDE from '../i18n/de-DE.json';
@@ -24,50 +25,56 @@ export function initTray(lng: string) {
   const t = lngMap[lng].tray;
   const contextMenu = Menu.buildFromTemplate([
     {
-      label: t.screenshot,
+      label: 'Take Screenshot',
       click: () => {
         showShotScreenWin();
       },
     },
     {
-      label: t.screenRecording,
+      label: 'Record Screen',
       click: () => {
         openClipScreenWin();
       },
     },
-    {
-      label: t.audioRecording,
-      click: () => {
-        openRecorderAudioWin();
-      },
-    },
-    {
-      label: t.videoRecording,
-      click: () => {
-        openRecorderVideoWin();
-      },
-    },
+    // {
+    //   label: t.audioRecording,
+    //   click: () => {
+    //     openRecorderAudioWin();
+    //   },
+    // },
+    // {
+    //   label: t.videoRecording,
+    //   click: () => {
+    //     openRecorderVideoWin();
+    //   },
+    // },
     {
       type: 'separator',
     },
     {
-      label: t.viewImage,
+      label: 'Edit Image',
+      click: () => {
+        openEditImageWin();
+      },
+    },
+    {
+      label: 'View Image',
       click: () => {
         openViewImageWin();
       },
     },
     {
-      label: t.watchVideo,
+      label: 'Watch Video',
       click: () => {
         openViewVideoWin();
       },
     },
-    {
-      label: t.playAudio,
-      click: () => {
-        openViewAudioWin();
-      },
-    },
+    // {
+    //   label: t.playAudio,
+    //   click: () => {
+    //     openViewAudioWin();
+    //   },
+    // },
     // {
     // 	type: "separator",
     // },
@@ -83,19 +90,19 @@ export function initTray(lng: string) {
       type: 'separator',
     },
     {
-      label: t.home,
+      label: 'Home',
       click: () => {
         openMainWin();
       },
     },
     {
-      label: t.setting,
+      label: 'Settings',
       click: () => {
         openSettingWin();
       },
     },
     {
-      label: t.help,
+      label:'Help',
       click: () => {
         shell.openExternal('https://027xiguapi.github.io/pear-rec/');
       },
@@ -103,15 +110,15 @@ export function initTray(lng: string) {
     {
       type: 'separator',
     },
+    // {
+    //   label: t.relaunch,
+    //   click: () => {
+    //     app.relaunch();
+    //     app.exit(0);
+    //   },
+    // },
     {
-      label: t.relaunch,
-      click: () => {
-        app.relaunch();
-        app.exit(0);
-      },
-    },
-    {
-      label: t.quit,
+      label: 'Quit',
       click: () => {
         app.quit();
       },

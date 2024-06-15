@@ -183,22 +183,22 @@ const ShortcutSetting = (props) => {
             onBlur={handleScreenshotBlur}
           />
         </Form.Item>
-        <Form.Item
+        {/* <Form.Item
           label={<span style={{ color: '#fff' }}>{t('home.longscreenshot')}:</span>}
           name="screenshot"
           validateStatus={videoRecordingValidate.validateStatus}
-        >
+        > */}
           {/* <Input
             className="videoRecordingInput"
             onKeyDown={setVideoRecording}
             onBlur={handleVideoRecordingBlur}
           /> */}
-          <Input
+          {/* <Input
             style={{ width: '100%' }}
             onKeyDown={setScreenshot}
             onBlur={handleScreenshotBlur}
           />
-        </Form.Item>
+        </Form.Item> */}
         {/* <Form.Item
           label={<span style={{ color: '#fff' }}>{t('home.screenRecording')}:</span>}
           name="screenRecording"

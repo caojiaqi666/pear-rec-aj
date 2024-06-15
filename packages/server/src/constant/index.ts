@@ -3,7 +3,7 @@ import { homedir } from 'node:os';
 
 export const DOCS_PATH = join(homedir(), 'Documents');
 
-export const PEAR_FILES_PATH = join(DOCS_PATH, 'Pear Files');
+export const PEAR_FILES_PATH = join(DOCS_PATH, 'Sniptaker  File');
 
 export const CONFIG_FILE_PATH = join(PEAR_FILES_PATH, `config.json`);
 

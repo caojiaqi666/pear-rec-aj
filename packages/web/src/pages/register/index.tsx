@@ -107,7 +107,7 @@ const Register = () => {
       );
 
       if (res) {
-        setRegisterStatus(res);
+        setRegisterStatus(res?.data);
         seTIsModalOpen(true);
       }
       console.log('res', res);

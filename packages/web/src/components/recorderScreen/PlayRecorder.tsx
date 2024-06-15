@@ -1,3 +1,4 @@
+import { Local } from '@/util/storage';
 import React, { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BsPlayFill } from 'react-icons/bs';
@@ -6,6 +7,10 @@ const PlayRecorder = (props) => {
   const { t } = useTranslation();
 
   function startRecord() {
+    if(!Local.get('userActivated')){
+      window.electronAPI.sendRegisterOpenWin()
+      return false
+    };
     props.startRecord();
     window.electronAPI?.sendRsStartRecord();
     console.log('开始录像...');

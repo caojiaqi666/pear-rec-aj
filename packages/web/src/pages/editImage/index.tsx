@@ -7,6 +7,7 @@ import EditImg from '../../components/editImg';
 import { db, defaultUser } from '../../db';
 import ininitApp from '../../pages/main';
 import styles from './index.module.scss';
+import { Local } from '@/util/storage';
 
 const EditImage = () => {
   const { t } = useTranslation();
@@ -82,7 +83,13 @@ const EditImage = () => {
 
   function handleSave(blob) {
     if (window.isElectron) {
+      if(!Local.get('userActivated')){
+        window.electronAPI.sendRegisterOpenWin()
+        return false
+      };
+
       window.electronAPI.sendEiDownloadImg(blob);
+      
     } else {
       const fileName = `sinptaker_${+new Date()}.png`;
       saveAs(blob, fileName);

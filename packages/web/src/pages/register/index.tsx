@@ -186,7 +186,7 @@ const Register = () => {
             <Form.Item<FieldType>
               label={<span style={{ color: '#FFFFFF', fontSize: 14 }}>{t('register.email')}</span>}
               name="email"
-              rules={[{ required: true, message: 'Please input' }]}
+              rules={[{ required: true, message: 'The Email cannot be empty!' }]}
               className={styles.formItem}
               colon={false}
             >
@@ -205,7 +205,7 @@ const Register = () => {
                 <span style={{ color: '#FFFFFF', fontSize: 14 }}>{t('register.LicenseKey')}</span>
               }
               name="licensekey"
-              rules={[{ required: true, message: 'Please input!' }]}
+              rules={[{ required: true, message: 'The license cannot be empty!' }]}
               className={styles.formItem}
               colon={false}
             >

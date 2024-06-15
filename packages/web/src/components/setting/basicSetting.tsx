@@ -71,6 +71,9 @@ const BasicSetting = (props) => {
     },
   };
 
+  const handleChangeLaunch=(result)=>{
+    handleSetOpenAtLogin(result.target.checked)
+  }
   return (
     <div className="basicForm">
       <Form
@@ -120,7 +123,7 @@ const BasicSetting = (props) => {
           />
         </Form.Item> */}
         <Form.Item name="openAtLogin" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
-          <Checkbox style={{ color: '#fff' }}>{t('setting.openAtLogin')}</Checkbox>
+          <Checkbox onChange={handleChangeLaunch} style={{ color: '#fff' }}>{t('setting.openAtLogin')}</Checkbox>
         </Form.Item>
       </Form>
     </div>

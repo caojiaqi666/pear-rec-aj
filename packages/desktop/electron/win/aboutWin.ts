@@ -14,7 +14,7 @@ function createAboutWin(): BrowserWindow {
       preload,
     },
   });
-
+  aboutWin.setWindowButtonVisibility(false)
   // aboutWin.webContents.openDevTools();
   if (url) {
     aboutWin.loadURL(WEB_URL + 'about.html');

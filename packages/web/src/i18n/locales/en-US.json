@@ -35,9 +35,9 @@
     "image": "image",
     "video": "video",
     "audioRecording": "sound recording",
-    "screenRecording": "screen recording",
+    "screenRecording": "Record Screen",
     "videoRecording": "video recording",
-    "screenshot": "Screen Capture",
+    "screenshot": "Take Screenshot",
     "longscreenshot": "Scrolling Windows",
     "fullScreen": "full",
     "viewImage": "view image",
@@ -182,5 +182,9 @@
     "fail4Desc": "License key is invalid! Please check it again or contact support team!",
     "fail5Desc": "The license key is not associated with this email address",
     "fail6Desc": "Unknown Error"
+  },
+  "about":{
+    "desc":"SnipTaker Technology Co.,Ltd is a hi-tech corporation, specialized in providing professional solutions for Windows, Mac. Our goal is not only to provide high quality products but also provide comfortable customer service.",
+    "bottomDesc":"Coypright@2024 SnipTaker. All rights reserved."
   }
 }

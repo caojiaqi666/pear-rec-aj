@@ -3,8 +3,8 @@ import { Layout, Form, Input, Button, Modal } from 'antd';
 import Close from '../../assets/close.png';
 import Cancel from '../../assets/cancel.png';
 import Confirm from '../../assets/confirm.png';
-import Success from "../../assets/success.png"
-import Warning from "../../assets/warning-circle.png"
+import Success from "../../assets/success.png";
+import Warning from "../../assets/warning-circle.png";
 import styles from './index.module.scss';
 import type { FormProps } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -257,6 +257,18 @@ const Register = () => {
             width: '430px',
             height: '210px',
           }}
+
+          styles={{
+         header:{
+          background:'#434343',
+         },
+         content:{
+          background:'#434343',
+         },
+         footer:{
+          background:'#434343',
+         },
+          }}
           open={isModalOpen}
           footer={[]}
           onCancel={() => seTIsModalOpen(false)}
@@ -267,13 +279,14 @@ const Register = () => {
               justifyContent: 'flex-start',
               alignItems: 'center',
               flexFlow: 'column wrap',
+
             }}
           >
             <img
-              style={{ width: '28px', height: '28px', marginTop: 23 }}
+              style={{ width: '28px', height: '28px', marginTop: 23}}
               src={resConfig?.[registerStatus]?.icon}
-            ></img>
-            <p style={{ marginTop: 20 }}>{resConfig?.[registerStatus]?.desc}</p>
+             />
+            <p style={{ marginTop: 20,color:'white' }}>{resConfig?.[registerStatus]?.desc}</p>
             <Button
               style={{
                 background: '#FF7301',

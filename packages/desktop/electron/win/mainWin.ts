@@ -17,7 +17,10 @@ const createMainWin = (): BrowserWindow => {
       preload,
     },
   });
-  mainWin.setWindowButtonVisibility(false)
+  if (process.platform === 'darwin') {
+    mainWin?.setWindowButtonVisibility(false)
+  }
+
   if (url) {
     mainWin.loadURL(WEB_URL + 'index.html');
   } else {

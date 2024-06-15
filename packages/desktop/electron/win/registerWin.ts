@@ -14,7 +14,10 @@ function createRegisterWin(): BrowserWindow {
       preload,
     },
   });
-  registerWin.setWindowButtonVisibility(false)
+  if (process.platform === 'darwin') {
+    registerWin?.setWindowButtonVisibility(false)
+  }
+
   // registerWin.webContents.openDevTools();
   if (url) {
     registerWin.loadURL(WEB_URL + 'register.html');

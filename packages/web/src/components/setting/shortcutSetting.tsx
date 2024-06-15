@@ -154,8 +154,8 @@ const ShortcutSetting = (props) => {
     db.shortcuts.update(shortcut.id, { ...defaultShortcut });
     form.setFieldValue('screenshot', defaultShortcut.screenshot);
     form.setFieldValue('videoRecording', defaultShortcut.screenshot);
-    form.setFieldValue('screenRecording', defaultShortcut.screenRecording);
-    form.setFieldValue('audioRecording', defaultShortcut.audioRecording);
+    // form.setFieldValue('screenRecording', defaultShortcut.screenRecording ?? '');
+    // form.setFieldValue('audioRecording', defaultShortcut.audioRecording ?? '');
   }
 
   const formItemLayout = {

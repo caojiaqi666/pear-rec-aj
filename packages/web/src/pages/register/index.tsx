@@ -101,8 +101,17 @@ const Register = () => {
   const request = async (values) => {
     try {
       setLoading(true)
+      var agent = navigator.userAgent.toLowerCase();
+      var isMac = /macintosh|mac os x/i.test(navigator.userAgent);
+      console.log("isMac", isMac)
+      if (agent.indexOf('win32') >= 0 || agent.indexOf('wow32') >= 0) {
+        console.log('这是windows32位系统');
+      }
+      if (agent.indexOf('win64') >= 0 || agent.indexOf('wow64') >= 0) {
+        console.log('这是windows64位系统');
+      }
       const res: any = await axios.get(
-        `https://www.regserver3.com/admin/checkregister.php?pid=4&email=${values.email}&license=${values.licensekey}&mac=4`,
+        `https://www.regserver3.com/admin/checkregister.php?pid=${isMac ? '4' : '3'}&email=${values.email}&license=${values.licensekey}&mac=4`,
         {
           timeout: 3000,
         },

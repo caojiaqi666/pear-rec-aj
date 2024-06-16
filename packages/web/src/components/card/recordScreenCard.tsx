@@ -63,7 +63,7 @@ const RecordScreenCard = forwardRef((props: any, ref: any) => {
       onClick={() => handleClipScreenClick('video')}
     >
       <img style={{ marginTop: '22px' }} src={RecordScreen} alt="" />
-      <div style={{ color: '#fff', marginTop: '12px' }}>{t('home.screenRecording')}</div>
+      <div style={{ color: '#fff', marginTop: '20px' }}>{t('home.screenRecording')}</div>
     </div>
   );
 });

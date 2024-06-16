@@ -43,7 +43,7 @@ const EditImageCard = forwardRef((props: any, ref: any) => {
         alt=""
         onClick={() => fileRef.current.click()}
       />
-      <div style={{ marginTop: '20px', color: "#fff" }}>{t('home.editImg')}</div>
+      <div style={{ marginTop: '22px', color: "#fff" }}>{t('home.editImg')}</div>
       <input
         type="file"
         ref={fileRef}

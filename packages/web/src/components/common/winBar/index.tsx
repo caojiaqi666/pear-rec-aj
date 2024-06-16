@@ -118,13 +118,13 @@ const Header = (props) => {
             title={t('nav.uploadFile')}
             onClick={() => props.onUploadFile()}
           />
-          <Button
+          {/* <Button
             className="scan icon no-drag"
             type="text"
             icon={<ScanOutlined />}
             title={t('nav.scan')}
             onClick={() => props.onScan()}
-          />
+          /> */}
           <Button
             className="search icon no-drag"
             type="text"

@@ -35,7 +35,7 @@ const ShotScreenCard = forwardRef((props: any, ref: any) => {
       <div
         style={{
           color: '#fff',
-          marginTop: "20px"
+          marginTop: "22px"
         }}
       >
         {t('home.screenshot')}

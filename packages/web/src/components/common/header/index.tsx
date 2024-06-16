@@ -53,12 +53,12 @@ const Header = (props) => {
           title={t('nav.download')}
           onClick={() => props.onDownload()}
         />
-        <PushpinOutlined
+        {/* <PushpinOutlined
           style={{ color: isTop ? '#08c' : '' }}
           className="alwaysOnTopWin icon"
           title={t('nav.alwaysOnTopWin')}
           onClick={() => handleAlwaysOnTopWin()}
-        />
+        /> */}
         <FolderOpenOutlined
           className="openFile icon"
           title={t('nav.openFile')}
@@ -69,7 +69,7 @@ const Header = (props) => {
           title={t('nav.uploadFile')}
           onClick={() => props.onUploadFile()}
         />
-        <ScanOutlined className="scan icon" title={t('nav.scan')} onClick={() => props.onScan()} />
+        {/* <ScanOutlined className="scan icon" title={t('nav.scan')} onClick={() => props.onScan()} /> */}
         <SearchOutlined
           className="search icon"
           title={t('nav.search')}

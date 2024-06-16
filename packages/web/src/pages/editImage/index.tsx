@@ -84,6 +84,7 @@ const EditImage = () => {
   function handleSave(blob) {
     if (window.isElectron) {
       if(!Local.get('userActivated')){
+				window.electronAPI.sendMaOpenWin();
         window.electronAPI.sendRegisterOpenWin()
         return false
       };

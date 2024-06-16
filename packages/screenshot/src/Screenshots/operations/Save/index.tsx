@@ -16,6 +16,7 @@ export default function Save (): ReactElement {
 
   const onClick = useCallback(() => {
     if(window.electronAPI && !Local.get('userActivated')){
+      window.electronAPI.sendMaOpenWin();
       window.electronAPI.sendRegisterOpenWin()
       call('onSave', null, null)
       reset()

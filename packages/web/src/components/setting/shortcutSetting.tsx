@@ -197,7 +197,7 @@ const ShortcutSetting = (props) => {
           validateStatus={screenRecordingValidate.validateStatus}
         >
           <Input
-            className="screenRecordingInput"
+            style={{ width: '100%' }}
             onKeyDown={setScreenRecording}
             // onBlur={handleScreenRecordingBlur}
           />

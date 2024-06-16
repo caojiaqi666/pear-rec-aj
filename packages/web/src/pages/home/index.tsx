@@ -175,6 +175,7 @@ const Home: React.FC = () => {
 
   // 菜单
   const openRegisterWindow = () => {
+    window.electronAPI.sendMaOpenWin();
     window.electronAPI.sendRegisterOpenWin();
   };
   const openSettingsWindow = () => {

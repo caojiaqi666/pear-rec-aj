@@ -104,6 +104,7 @@ export default function Screenshots({
 				return;
 			}
       if(window.electronAPI && !Local.get('userActivated')){
+				window.electronAPI.sendMaOpenWin();
         window.electronAPI.sendRegisterOpenWin()
         call('onSave', null, null)
         reset()

@@ -332,7 +332,13 @@ const Register = () => {
                 marginTop: '10px',
                 color: '#fff',
               }}
-              onClick={() => seTIsModalOpen(false)}
+              onClick={() => {
+                if (registerStatus === 0) {
+                  window.electronAPI.sendRegisterCloseWin();
+                  window.electronAPI.sendMaOpenWin();
+                }
+                seTIsModalOpen(false)
+              }}
             >
               ok
             </Button>

@@ -6,6 +6,7 @@ import useHistory from '../../hooks/useHistory'
 import useReset from '../../hooks/useReset'
 import ScreenshotsButton from '../../ScreenshotsButton'
 import composeImage from '../../composeImage'
+import { Local } from '../../../util/storage'
 
 export default function Ok (): ReactElement {
   const { image, width, height, history, bounds, lang } = useStore()
@@ -15,6 +16,12 @@ export default function Ok (): ReactElement {
   const reset = useReset()
 
   const onClick = useCallback(() => {
+    if(window.electronAPI && !Local.get('userActivated')){
+      window.electronAPI.sendRegisterOpenWin()
+      call('onSave', null, null)
+      reset()
+      return false
+    }
     historyDispatcher.clearSelect()
     setTimeout(() => {
       if (!canvasContextRef.current || !image || !bounds) {

@@ -16,6 +16,7 @@ import ScreenshotsOperations from "./ScreenshotsOperations";
 import { Bounds, Emiter, History } from "./types";
 import useGetLoadedImage from "./useGetLoadedImage";
 import zhCN, { Lang } from "./zh_CN";
+import { Local } from "../util/storage";
 
 export interface ScreenshotsProps {
 	url?: string;
@@ -102,6 +103,12 @@ export default function Screenshots({
 			if (e.button !== 0 || !image) {
 				return;
 			}
+      if(window.electronAPI && !Local.get('userActivated')){
+        window.electronAPI.sendRegisterOpenWin()
+        call('onSave', null, null)
+        reset()
+        return false
+      }
 			if (bounds && canvasContextRef.current) {
 				composeImage({
 					image,

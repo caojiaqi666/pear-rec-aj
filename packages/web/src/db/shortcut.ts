@@ -5,11 +5,11 @@ export interface Shortcut {
 
   screenshot: string;
 
-  videoRecording: string;
+  videoRecording?: string;
 
-  screenRecording: string;
+  screenRecording?: string;
 
-  audioRecording: string;
+  audioRecording?: string;
 
   userId: number;
 
@@ -24,9 +24,6 @@ export interface Shortcut {
 
 export const defaultShortcut = {
   screenshot: 'Alt+Shift+Q',
-  videoRecording: 'Alt+Shift+V',
-  screenRecording: 'Alt+Shift+S',
-  audioRecording: 'Alt+Shift+A',
   createdAt: new Date(),
   updatedAt: new Date(),
 };

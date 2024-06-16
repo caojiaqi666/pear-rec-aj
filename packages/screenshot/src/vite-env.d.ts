@@ -12,6 +12,7 @@ interface ScreenshotsData {
 	display: Display;
 }
 
+
 interface GlobalScreenshots {
 	ready: () => void;
 	reset: () => void;
@@ -25,5 +26,6 @@ interface GlobalScreenshots {
 declare global {
 	interface Window {
 		screenshots: GlobalScreenshots;
+    electronAPI: any;
 	}
 }

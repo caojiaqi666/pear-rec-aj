@@ -22,6 +22,7 @@ const Register = () => {
   const [loading, setLoading] = useState(false)
   const [isModalOpen, seTIsModalOpen] = useState(false);
   const [registerStatus, setRegisterStatus] = useState<number>();
+  const [hasRole, setHasRole] = useState<boolean>(false);
   const { t, i18n } = useTranslation();
   const headerStyle: React.CSSProperties = {
     width: '100%',
@@ -144,6 +145,10 @@ const Register = () => {
     try {
       const uEmail = Local.get('uEmail') || null;
       const uKey = Local.get('uKey') || null;
+
+      if (uEmail && uKey) {
+        setHasRole(true)
+      }
       return {
         email: uEmail,
         licensekey: uKey
@@ -232,6 +237,7 @@ const Register = () => {
                   borderRadius: '8px',
                   color: '#fff',
                 }}
+                disabled={hasRole}
               />
             </Form.Item>
 
@@ -251,6 +257,7 @@ const Register = () => {
                   borderRadius: '8px',
                   color: '#fff',
                 }}
+                disabled={hasRole}
               />
             </Form.Item>
 

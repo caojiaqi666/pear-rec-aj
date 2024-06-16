@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { ipcRenderer } from 'electron';
 import { useState } from 'react';
+import { Local } from '@/util/storage';
 
 const { Header, Content } = Layout;
 type FieldType = {
@@ -120,6 +121,13 @@ const Register = () => {
       if (res) {
         setRegisterStatus(res?.data);
         seTIsModalOpen(true);
+        if (res?.data === 0) {
+          Local.set('userActivated', true);
+          Local.set("uEmail", values?.email)
+          Local.set("uKey", values?.licensekey)
+        } else {
+          Local.set('userActivated', false);
+        }
       }
       setLoading(false)
       console.log('res', res);
@@ -128,8 +136,22 @@ const Register = () => {
       console.log('err', err);
       setRegisterStatus(6);
       seTIsModalOpen(true);
+      Local.set('userActivated', false);
     }
   };
+
+  const getInitFormValue = () => {
+    try {
+      const uEmail = Local.get('uEmail') || null;
+      const uKey = Local.get('uKey') || null;
+      return {
+        email: uEmail,
+        licensekey: uKey
+      }
+    } catch(err) {
+      return {}
+    }
+  }
   return (
     <Layout>
       <Header className={styles.titlebar} style={headerStyle}>
@@ -190,7 +212,7 @@ const Register = () => {
             labelCol={{ span: 6 }}
             wrapperCol={{ span: 18 }}
             style={{ marginTop: 27 }}
-            initialValues={{ remember: true }}
+            initialValues={getInitFormValue()}
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
             autoComplete="off"

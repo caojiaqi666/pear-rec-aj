@@ -18,6 +18,7 @@ type FieldType = {
   licensekey?: string;
 };
 const Register = () => {
+  const [loading, setLoading] = useState(false)
   const [isModalOpen, seTIsModalOpen] = useState(false);
   const [registerStatus, setRegisterStatus] = useState<number>();
   const { t, i18n } = useTranslation();
@@ -99,6 +100,7 @@ const Register = () => {
 
   const request = async (values) => {
     try {
+      setLoading(true)
       const res: any = await axios.get(
         `https://www.regserver3.com/admin/checkregister.php?pid=4&email=${values.email}&license=${values.licensekey}&mac=4`,
         {
@@ -110,8 +112,10 @@ const Register = () => {
         setRegisterStatus(res?.data);
         seTIsModalOpen(true);
       }
+      setLoading(false)
       console.log('res', res);
     } catch (err) {
+      setLoading(false)
       console.log('err', err);
       setRegisterStatus(6);
       seTIsModalOpen(true);
@@ -219,7 +223,7 @@ const Register = () => {
               />
             </Form.Item>
 
-            <Form.Item wrapperCol={{ offset: 13, span: 11 }}>
+            <div style={{float: 'right', marginBottom: 24}}>
               <Button
                 type="primary"
                 htmlType="submit"
@@ -230,6 +234,8 @@ const Register = () => {
                   padding: '0 42px',
                   color: '#181818',
                 }}
+                loading={loading}
+                disabled={loading}
               >
                 {t('register.Register')}
               </Button>
@@ -246,7 +252,7 @@ const Register = () => {
               >
                 {t('register.BuyNow')}
               </Button>
-            </Form.Item>
+            </div>
           </Form>
         </div>
       </Content>

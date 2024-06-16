@@ -38,7 +38,7 @@ features:
     justify-content: center;
     align-items: center;
     margin-top: 10px;">
-  <!-- <a href="https://github.com/027xiguapi/pear-rec" target="_blank" style="margin-right: 10px;">
+  <!-- <a href="https://github.com/SnipTaker/pear-rec" target="_blank" style="margin-right: 10px;">
     <img src="https://img.shields.io/badge/vue-3.2.36-brightgreen.svg" alt="pear-rec">
   </a>
   <a href="https://gitee.com/wocwin/t-ui-plus/stargazers" target="_blank">

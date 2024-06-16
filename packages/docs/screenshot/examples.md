@@ -21,7 +21,7 @@ import "@pear-rec/screenshot/lib/style.css";
 
 在线示例：<a href="/pear-rec/screenshot/demo.html" target="_blank"> DEMO </a>
 
-- https://027xiguapi.github.io/pear-rec/screenshot/demo.html
+- https://SnipTaker.github.io/pear-rec/screenshot/demo.html
 
 <center>
   <img src="/imgs/screenshot.jpg"/>

@@ -15,7 +15,7 @@ const HomeFooter = () => {
   }
 
   function handleOpenGithub() {
-    window.open('https://github.com/027xiguapi/pear-rec');
+    window.open('https://github.com/SnipTaker/pear-rec');
   }
 
   return (

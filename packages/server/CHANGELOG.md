@@ -64,4 +64,4 @@ perf: 优化打包、指定类型声明文件
 
 ### Patch Changes
 
-- [`1a0512d`](https://github.com/027xiguapi/pear-rec/commit/1a0512d398844f481d84c8e62a3a3150dfed0535) Thanks [@027xiguapi](https://github.com/027xiguapi)! - feat: 服务引入页面、打包优化
+- [`1a0512d`](https://github.com/SnipTaker/pear-rec/commit/1a0512d398844f481d84c8e62a3a3150dfed0535) Thanks [@SnipTaker](https://github.com/SnipTaker)! - feat: 服务引入页面、打包优化

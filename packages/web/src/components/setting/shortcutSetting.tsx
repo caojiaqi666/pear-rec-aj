@@ -222,7 +222,7 @@ const ShortcutSetting = (props) => {
             onKeyDown={setAudioRecording}
             onBlur={handleAudioRecordingBlur}
           />
-        </Form.Item> */}
+        </Form.Item>
         {/* <Flex gap="small" wrap="wrap">
           <Button type="primary" className="resetBtn" danger onClick={handleResetClick}>
             {t('setting.reset')}

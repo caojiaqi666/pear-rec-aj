@@ -38,7 +38,7 @@ const BasicSetting = (props) => {
   }
 
   function handleTipClick() {
-    window.open('https://github.com/027xiguapi/pear-rec');
+    window.open('https://github.com/SnipTaker/pear-rec');
   }
 
   return (
@@ -62,7 +62,7 @@ const BasicSetting = (props) => {
       </Form>
 
       <p className="tip" onClick={handleTipClick}>
-        {t('setting.address')}:<Button type="link">https://github.com/027xiguapi/pear-rec</Button>
+        {t('setting.address')}:<Button type="link">https://github.com/SnipTaker/pear-rec</Button>
       </p>
     </div>
   );

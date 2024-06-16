@@ -41,6 +41,6 @@
   publish: {
     provider: 'github',
     repo: 'SnipTaker',
-    owner: '027xiguapi',
+    owner: 'SnipTaker',
   },
 }

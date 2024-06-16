@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://027xiguapi.github.io/pear-rec/logo.png"  height="120">
+  <img src="https://SnipTaker.github.io/pear-rec/logo.png"  height="120">
   <h1 align="center">pear-rec</h1>
 </p>
 <p align="center">
-<img src="https://img.shields.io/github/stars/027xiguapi/pear-rec" alt="stars">
+<img src="https://img.shields.io/github/stars/SnipTaker/pear-rec" alt="stars">
 <img src="https://img.shields.io/badge/react-v18-blue" alt="react">
 <img src="https://img.shields.io/badge/electron-v26-blue" alt="electron">
 <img src="https://img.shields.io/badge/nestjs-v3-blue" alt="nestjs">
@@ -21,13 +21,13 @@
 
 > pear-rec 是一款**开源、免费**和功能强大的截屏、录屏和录音软件，适用于多个平台和各种使用场景。它提供了简单易用的界面和丰富的功能，使用户能够轻松记录屏幕活动、录制音频和截取屏幕截图。无论是在教育、工作还是娱乐中，pear-rec都能为用户提供便捷和高效的录制工具。
 >
-> pear-rec(梨子 rec) 是一个跨平台的截图、录屏、录音、录像、录制(动图)gif、查看图片、查看视频、查看音频和修改图片的软件，目前提供了 Windows 、Linux 和 macOS [免费下载](https://github.com/027xiguapi/pear-rec/releases)。
+> pear-rec(梨子 rec) 是一个跨平台的截图、录屏、录音、录像、录制(动图)gif、查看图片、查看视频、查看音频和修改图片的软件，目前提供了 Windows 、Linux 和 macOS [免费下载](https://github.com/SnipTaker/pear-rec/releases)。
 >
-> 更多功能和 api 可以查看[官网(https://027xiguapi.github.io/pear-rec)](https://027xiguapi.github.io/pear-rec) 或 [https://xiguapi027.gitee.io/pear-rec](https://xiguapi027.gitee.io/pear-rec)
+> 更多功能和 api 可以查看[官网(https://SnipTaker.github.io/pear-rec)](https://SnipTaker.github.io/pear-rec) 或 [https://xiguapi027.gitee.io/pear-rec](https://xiguapi027.gitee.io/pear-rec)
 
 ## 🧱 架构
 
-<img src="https://027xiguapi.github.io/pear-rec/imgs/webav.png" />
+<img src="https://SnipTaker.github.io/pear-rec/imgs/webav.png" />
 
 > pear-rec(梨子 rec) 的跨平台是基于 `electronjs`,前端是基于 `reactjs`,截图、录屏、录音、录像、录制(动图)gif 等功能是基于 `webrtc` 和 `webcodecs` 的一个项目。
 
@@ -43,7 +43,7 @@
 
 > gitee: https://gitee.com/xiguapi027/pear-rec
 >
-> github: https://github.com/027xiguapi/pear-rec
+> github: https://github.com/SnipTaker/pear-rec
 
 ## 🔨 源码运行&编译
 
@@ -82,7 +82,7 @@ pnpm run clear
 ## 🥰 功能
 
 <center>
-  <img src="https://027xiguapi.github.io/pear-rec/assets/home.7d9162cb.jpg" />
+  <img src="https://SnipTaker.github.io/pear-rec/assets/home.7d9162cb.jpg" />
 </center>
 
 已经勾选的功能是开发过程最新功能，但可能还没发布在最新版本
@@ -158,16 +158,16 @@ pnpm run clear
 
 | 系统 | Windows | Linux | Macos |
 | --- | --- | --- | --- |
-| 链接 | [下载](https://github.com/027xiguapi/pear-rec/releases) | [下载](https://github.com/027xiguapi/pear-rec/releases) | [下载](https://github.com/027xiguapi/pear-rec/releases) |
+| 链接 | [下载](https://github.com/SnipTaker/pear-rec/releases) | [下载](https://github.com/SnipTaker/pear-rec/releases) | [下载](https://github.com/SnipTaker/pear-rec/releases) |
 
 ## 👨‍👨‍👦‍👦 反馈和交流
 
-我们推荐使用 [issue](https://github.com/027xiguapi/pear-rec/issues) 列表进行最直接有效的反馈，也可以下面的方式
+我们推荐使用 [issue](https://github.com/SnipTaker/pear-rec/issues) 列表进行最直接有效的反馈，也可以下面的方式
 
 - qq 群
 
 <p align="center">
-  <img src="https://027xiguapi.github.io/pear-rec/imgs/sinptaker_qq_qrcode.png" />
+  <img src="https://SnipTaker.github.io/pear-rec/imgs/sinptaker_qq_qrcode.png" />
 </p>
 
 ## 🤝 开源协议

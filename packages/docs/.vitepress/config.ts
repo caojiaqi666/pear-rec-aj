@@ -19,7 +19,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: '文档', link: '/desktop/examples.md' },
-      { text: '下载', link: 'https://github.com/027xiguapi/pear-rec/releases' },
+      { text: '下载', link: 'https://github.com/SnipTaker/pear-rec/releases' },
     ],
     // 侧边栏
     sidebar: [
@@ -37,7 +37,7 @@ export default defineConfig({
       },
     ],
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/027xiguapi/pear-rec' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/SnipTaker/pear-rec' }],
     // 页脚
     footer: {
       message:

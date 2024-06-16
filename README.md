@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://027xiguapi.github.io/pear-rec/logo.png"  height="120">
+  <img src="https://SnipTaker.github.io/pear-rec/logo.png"  height="120">
   <h1 align="center">pear-rec</h1>
 </p>
 <p align="center">
-<img src="https://img.shields.io/github/stars/027xiguapi/pear-rec" alt="stars">
+<img src="https://img.shields.io/github/stars/SnipTaker/pear-rec" alt="stars">
 <img src="https://img.shields.io/badge/react-v18-blue" alt="react">
 <img src="https://img.shields.io/badge/electron-v26-blue" alt="electron">
 <img src="https://img.shields.io/badge/nestjs-v3-blue" alt="nestjs">
@@ -23,11 +23,11 @@
 >
 > pear-rec(pear rec) is a project based on react + electron + vite + viewerjs + plyr + aplayer + react-screenshots + webav.
 >
-> More functions and APIs can be found on [the official website(https://027xiguapi.github.io/pear-rec)](https://027xiguapi.github.io/pear-rec) or [https://xiguapi027.gitee.io/pear-rec](https://xiguapi027.gitee.io/pear-rec).
+> More functions and APIs can be found on [the official website(https://SnipTaker.github.io/pear-rec)](https://SnipTaker.github.io/pear-rec) or [https://xiguapi027.gitee.io/pear-rec](https://xiguapi027.gitee.io/pear-rec).
 
 ## 🧱 Frameworks
 
-<img src="https://027xiguapi.github.io/pear-rec/imgs/webav.png" />
+<img src="https://SnipTaker.github.io/pear-rec/imgs/webav.png" />
 
 The cross-Platform of `pear-rec` is based on `electronjs`, and the front-end is based on `reactjs`. The functions of screenshot, screen recording, recording, recording (dynamic image) gif are a project based on `webrtc` and `webcodecs`.
 
@@ -39,7 +39,7 @@ The cross-Platform of `pear-rec` is based on `electronjs`, and the front-end is 
 
 > gitee: https://gitee.com/xiguapi027/pear-rec
 >
-> github: https://github.com/027xiguapi/pear-rec
+> github: https://github.com/SnipTaker/pear-rec
 
 ## 🔨 Usage
 
@@ -49,7 +49,7 @@ To clone and run this repository you'll need [Git](https://git-scm.com) , [Node.
 
 ```shell
 # Clone this repository
-git clone https://github.com/027xiguapi/pear-rec.git
+git clone https://github.com/SnipTaker/pear-rec.git
 # Go into the repository
 cd pear-rec
 # Install dependencies
@@ -75,7 +75,7 @@ pnpm run clear
 ## 🥰 Functions
 
 <center>
-  <img src="https://027xiguapi.github.io/pear-rec/assets/home.7d9162cb.jpg" />
+  <img src="https://SnipTaker.github.io/pear-rec/assets/home.7d9162cb.jpg" />
 </center>
 
 Features that have been ticked are the latest in the development process but may not have been released in the latest version
@@ -148,7 +148,7 @@ Features that have been ticked are the latest in the development process but may
 
 | OS | Windows | Linux | Macos |
 | --- | --- | --- | --- |
-| Link | [Download](https://github.com/027xiguapi/pear-rec/releases) | [Download](https://github.com/027xiguapi/pear-rec/releases) | [Download](https://github.com/027xiguapi/pear-rec/releases) |
+| Link | [Download](https://github.com/SnipTaker/pear-rec/releases) | [Download](https://github.com/SnipTaker/pear-rec/releases) | [Download](https://github.com/SnipTaker/pear-rec/releases) |
 
 
 ## 🖖 Vue
@@ -157,7 +157,7 @@ Screenshot implemented by community personnel based on `vue` 👉 [electron-scre
 
 ## 👨‍👨‍👦‍👦 Feedback
 
-We recommend that [issue](https://github.com/027xiguapi/pear-rec/issues) be used for problem feedback.
+We recommend that [issue](https://github.com/SnipTaker/pear-rec/issues) be used for problem feedback.
 
 ## 🤝 License
 

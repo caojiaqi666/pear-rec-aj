@@ -10,7 +10,7 @@ jobs:
       - name: Mirror with force push (git push -f)
         uses: Yikun/hub-mirror-action@master
         with:
-          src: github/027xiguapi
+          src: github/SnipTaker
           dst: gitee/xiguapi027
           dst_key: '${{ secrets.GITEE_PRIVATE_KEY }}'
           dst_token: '${{ secrets.GITEE_TOKEN }}'

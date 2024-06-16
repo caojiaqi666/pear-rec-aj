@@ -104,7 +104,7 @@ export function initTray(lng: string) {
     {
       label:'Help',
       click: () => {
-        shell.openExternal('https://027xiguapi.github.io/pear-rec/');
+        shell.openExternal('https://SnipTaker.github.io/pear-rec/');
       },
     },
     {

@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://027xiguapi.github.io/pear-rec/logo.png"  height="120">
+  <img src="https://SnipTaker.github.io/pear-rec/logo.png"  height="120">
   <h1 align="center">pear-rec</h1>
 </p>
 <p align="center">
-<img src="https://img.shields.io/github/stars/027xiguapi/pear-rec" alt="stars">
+<img src="https://img.shields.io/github/stars/SnipTaker/pear-rec" alt="stars">
 <img src="https://img.shields.io/badge/react-v18-blue" alt="react">
 <img src="https://img.shields.io/badge/electron-v26-blue" alt="electron">
 <img src="https://img.shields.io/badge/nestjs-v3-blue" alt="nestjs">
@@ -23,13 +23,13 @@
 >
 > pear-rec(pear rec) ist ein Projekt basierend auf react + electron + vite + viewerjs + plyr + aplayer + react-screenshots.
 >
-> Weitere Funktionen und APIs finden Sie auf der offiziellen [Website](https://027xiguapi.github.io/pear-rec).
+> Weitere Funktionen und APIs finden Sie auf der offiziellen [Website](https://SnipTaker.github.io/pear-rec).
 
 ## Installation
 
 ```
 gitee: https://gitee.com/xiguapi027/pear-rec
-github: https://github.com/027xiguapi/pear-rec
+github: https://github.com/SnipTaker/pear-rec
 ```
 
 ## Verwendung
@@ -40,7 +40,7 @@ Bevor Sie dieses Repository klonen und ausführen, müssen Sie [Git](https://git
 
 ```shell
 # Clone this repository
-git clone https://github.com/027xiguapi/pear-rec.git
+git clone https://github.com/SnipTaker/pear-rec.git
 # Go into the repository
 cd pear-rec
 # Install dependencies
@@ -79,14 +79,14 @@ pnpm run clear
 
 | OS | Windows | Linux | Macos |
 | --- | --- | --- | --- |
-| link | [Download](https://github.com/027xiguapi/pear-rec/releases) | [Download](https://github.com/027xiguapi/pear-rec/releases) | [Download](https://github.com/027xiguapi/pear-rec/releases) |
+| link | [Download](https://github.com/SnipTaker/pear-rec/releases) | [Download](https://github.com/SnipTaker/pear-rec/releases) | [Download](https://github.com/SnipTaker/pear-rec/releases) |
 
 ## Feedback
 
 - QQ group
 
 <p align="center">
-  <img src="https://027xiguapi.github.io/pear-rec/imgs/sinptaker_qq_qrcode.png" />
+  <img src="https://SnipTaker.github.io/pear-rec/imgs/sinptaker_qq_qrcode.png" />
 </p>
 
 ## Lizenz

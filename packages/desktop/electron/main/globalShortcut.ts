@@ -56,9 +56,9 @@ function registerRecorderVideoShortcut(data) {
 
 function unregisterGlobalShortcut() {
   globalShortcut.unregister('Alt+Shift+q');
-  globalShortcut.unregister('Alt+Shift+s');
-  globalShortcut.unregister('Alt+Shift+a');
-  globalShortcut.unregister('Alt+Shift+v');
+  // globalShortcut.unregister('Alt+Shift+s');
+  // globalShortcut.unregister('Alt+Shift+a');
+  // globalShortcut.unregister('Alt+Shift+v');
   globalShortcut.unregister('Esc');
 }
 

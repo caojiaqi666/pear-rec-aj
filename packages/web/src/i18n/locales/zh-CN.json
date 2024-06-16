@@ -52,7 +52,8 @@
     "pinImage": "贴图",
     "converterGif": "视频转gif",
     "scanCode": "扫码",
-    "spliceImage": "图片拼接"
+    "spliceImage": "图片拼接",
+    "applySuccess": "应用成功"
   },
   "editImage": {
     "save": "保存",

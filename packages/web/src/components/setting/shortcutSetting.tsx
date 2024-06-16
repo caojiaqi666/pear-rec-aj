@@ -1,4 +1,4 @@
-import { Form, Input, Button, Flex, Checkbox } from 'antd';
+import { Form, Input, Button, Flex, Checkbox, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import { db, defaultShortcut } from '../../db';
@@ -169,9 +169,16 @@ const ShortcutSetting = (props) => {
     },
   };
 
+  const onFinish = (value) => {
+    console.log("value", value)
+    handleScreenshotBlur(null)
+    handleScreenRecordingBlur(null);
+    message.success(t('home.applySuccess'))
+  }
+
   return (
     <div className="shortcutSetting">
-      <Form form={form} {...formItemLayout} colon={false}>
+      <Form form={form} {...formItemLayout} colon={false} onFinish={onFinish}>
         <Form.Item
           label={<span style={{ color: '#fff' }}>{t('home.screenshot')}:</span>}
           name="screenshot"
@@ -180,37 +187,21 @@ const ShortcutSetting = (props) => {
           <Input
             style={{ width: '100%' }}
             onKeyDown={setScreenshot}
-            onBlur={handleScreenshotBlur}
+            // onBlur={handleScreenshotBlur}
           />
         </Form.Item>
-        {/* <Form.Item
-          label={<span style={{ color: '#fff' }}>{t('home.longscreenshot')}:</span>}
-          name="screenshot"
-          validateStatus={videoRecordingValidate.validateStatus}
-        > */}
-          {/* <Input
-            className="videoRecordingInput"
-            onKeyDown={setVideoRecording}
-            onBlur={handleVideoRecordingBlur}
-          /> */}
-          {/* <Input
-            style={{ width: '100%' }}
-            onKeyDown={setScreenshot}
-            onBlur={handleScreenshotBlur}
-          />
-        </Form.Item> */}
-        {/* <Form.Item
+        
+        <Form.Item
           label={<span style={{ color: '#fff' }}>{t('home.screenRecording')}:</span>}
           name="screenRecording"
           validateStatus={screenRecordingValidate.validateStatus}
-          help={screenRecordingValidate.errorMsg || t('setting.tip')}
         >
           <Input
             className="screenRecordingInput"
             onKeyDown={setScreenRecording}
-            onBlur={handleScreenRecordingBlur}
+            // onBlur={handleScreenRecordingBlur}
           />
-        </Form.Item> */}
+        </Form.Item>
         {/* <Form.Item
           label={<span style={{ color: '#fff' }}>{t('home.audioRecording')}</span>}
           name="audioRecording"
@@ -228,6 +219,24 @@ const ShortcutSetting = (props) => {
             {t('setting.reset')}
           </Button>
         </Flex> */}
+        
+          <Button
+            type="primary"
+            htmlType="submit"
+            style={{
+              background: '#D8D8D8',
+              border: '1px solid #979797',
+              padding: '0 42px',
+              height: 30,
+              color: '#181818',
+              float: 'right',
+              borderRadius: 16,
+              marginTop: 8,
+              marginRight: 12
+            }}
+          >
+            Apply
+          </Button>
       </Form>
     </div>
   );

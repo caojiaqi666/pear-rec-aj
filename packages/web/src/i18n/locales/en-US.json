@@ -52,7 +52,8 @@
     "pinImage": "pin image",
     "converterGif": "converter gif",
     "scanCode": "scan code",
-    "spliceImage": "splice image"
+    "spliceImage": "splice image",
+    "applySuccess": "Apply Success"
   },
   "editImage": {
     "save": "save",

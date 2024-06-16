@@ -27,16 +27,18 @@
     target: [
       {
         target: 'nsis',
+        arch: ['x64', 'ia32'],
       },
     ],
-    artifactName: '${productName}-Windows-${version}-Setup.${ext}',
-    requestedExecutionLevel: 'requireAdministrator',
+    artifactName: '${productName}-Windows-${version}-Setup.${ext}'
   },
   nsis: {
     oneClick: false,
     perMachine: false,
     allowToChangeInstallationDirectory: true,
     deleteAppDataOnUninstall: false,
+    guid:'SnipTaker',
+    include:'./installer.nsh'
   },
   publish: {
     provider: 'github',

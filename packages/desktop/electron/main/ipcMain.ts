@@ -36,7 +36,8 @@ import { showNotification } from './notification';
 import * as utils from './utils';
 import { PEAR_FILES_PATH } from './constant';
 import os from 'os';
-
+import process from 'process'
+import path from 'path'
 const selfWindws = async () =>
   await Promise.all(
     webContents
@@ -57,6 +58,8 @@ const selfWindws = async () =>
         };
       }),
   );
+
+
 
 function initIpcMain() {
   // 日志
@@ -361,8 +364,17 @@ function initIpcMain() {
   ipcMain.on('se:open-filePath', (e, filePath) => {
     shell.openPath(filePath || PEAR_FILES_PATH);
   });
+
   ipcMain.on('se:set-openAtLogin', (e, isOpen) => {
-    app.setLoginItemSettings({ openAtLogin: isOpen });
+    const exeName = path.basename(process.execPath)
+    app.setLoginItemSettings({
+      openAtLogin: isOpen,
+      openAsHidden: true,
+      path: process.execPath,
+      args: [
+        '--processStart', `"${exeName}"`,
+      ]
+    });
   });
   ipcMain.on('se:set-language', (e, lng) => {
     editConfig('language', lng, () => {

@@ -10,8 +10,9 @@ import type { FormProps } from 'antd';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { ipcRenderer } from 'electron';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Local } from '@/util/storage';
+import { useForm } from 'antd/es/form/Form';
 
 const { Header, Content } = Layout;
 type FieldType = {
@@ -24,6 +25,7 @@ const Register = () => {
   const [registerStatus, setRegisterStatus] = useState<number>();
   const [hasRole, setHasRole] = useState<boolean>(false);
   const { t, i18n } = useTranslation();
+  const [form] = useForm()
   const headerStyle: React.CSSProperties = {
     width: '100%',
     color: '#fff',
@@ -123,9 +125,11 @@ const Register = () => {
         setRegisterStatus(res?.data);
         seTIsModalOpen(true);
         if (res?.data === 0) {
+          
           Local.set('userActivated', true);
           Local.set("uEmail", values?.email)
           Local.set("uKey", values?.licensekey)
+          
         } else {
           Local.set('userActivated', false);
         }
@@ -137,7 +141,6 @@ const Register = () => {
       console.log('err', err);
       setRegisterStatus(6);
       seTIsModalOpen(true);
-      Local.set('userActivated', false);
     }
   };
 
@@ -145,18 +148,22 @@ const Register = () => {
     try {
       const uEmail = Local.get('uEmail') || null;
       const uKey = Local.get('uKey') || null;
-
-      if (uEmail && uKey) {
-        setHasRole(true)
-      }
-      return {
+      form.setFieldsValue({
         email: uEmail,
         licensekey: uKey
+      })
+      if (uEmail && uKey) {
+        setHasRole(true)
       }
     } catch(err) {
       return {}
     }
   }
+
+  useEffect(() => {
+    getInitFormValue();
+  }, [])
+
   return (
     <Layout>
       <Header className={styles.titlebar} style={headerStyle}>
@@ -217,11 +224,11 @@ const Register = () => {
             labelCol={{ span: 6 }}
             wrapperCol={{ span: 18 }}
             style={{ marginTop: 27 }}
-            initialValues={getInitFormValue()}
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
             autoComplete="off"
             requiredMark={false}
+            form={form}
           >
             <Form.Item<FieldType>
               label={<span style={{ color: '#FFFFFF', fontSize: 14 }}>{t('register.email')}</span>}

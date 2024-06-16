@@ -5,25 +5,29 @@ import { openClipScreenWin } from '../win/clipScreenWin';
 import { openRecorderVideoWin } from '../win/recorderVideoWin';
 
 function registerGlobalShortcut(data) {
-  globalShortcut.register(data['screenshot'], () => {
-    showShotScreenWin();
-  });
-
-  globalShortcut.register(data['screenRecording'], () => {
-    openClipScreenWin();
-  });
-
-  globalShortcut.register(data['audioRecording'], () => {
-    openRecorderAudioWin();
-  });
-
-  globalShortcut.register(data['videoRecording'], () => {
-    openRecorderVideoWin();
-  });
-
-  globalShortcut.register('Esc', () => {
-    hideShotScreenWin();
-  });
+  try {
+    globalShortcut.register(data['screenshot'], () => {
+      showShotScreenWin();
+    });
+  
+    globalShortcut.register(data['screenRecording'], () => {
+      openClipScreenWin();
+    });
+  
+    globalShortcut.register(data['audioRecording'], () => {
+      openRecorderAudioWin();
+    });
+  
+    globalShortcut.register(data['videoRecording'], () => {
+      openRecorderVideoWin();
+    });
+  
+    globalShortcut.register('Esc', () => {
+      hideShotScreenWin();
+    });
+  } catch(err) {
+    console.log("err",err)
+  }
 }
 
 function registerShotScreenShortcut(data) {

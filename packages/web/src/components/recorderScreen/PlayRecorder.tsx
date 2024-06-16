@@ -8,6 +8,7 @@ const PlayRecorder = (props) => {
 
   function startRecord() {
     if(!Local.get('userActivated')){
+      window.electronAPI.sendCsCloseWin();
       window.electronAPI.sendRegisterOpenWin()
       return false
     };

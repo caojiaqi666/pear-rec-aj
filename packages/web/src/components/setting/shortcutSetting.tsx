@@ -9,10 +9,10 @@ const ShortcutSetting = (props) => {
   const { user, setting } = props;
   const [form] = Form.useForm();
   const [shortcut, setShortcut] = useState<any>({
-    // screenshot: 'Alt+Shift+Q',
-    // videoRecording: 'Alt+Shift+V',
-    // screenRecording: 'Alt+Shift+S',
-    // audioRecording: 'Alt+Shift+A',
+    screenshot: 'Alt+Shift+Q',
+    videoRecording: 'Alt+Shift+V',
+    screenRecording: 'Alt+Shift+S',
+    audioRecording: 'Alt+Shift+A',
   });
   const [screenshotValidate, setScreenshotValidate] = useState<any>({
     validateStatus: 'success',

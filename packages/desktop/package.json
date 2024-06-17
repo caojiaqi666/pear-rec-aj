@@ -24,6 +24,7 @@
     "clear": "rimraf node_modules"
   },
   "dependencies": {
+    "address": "^2.0.2",
     "electron-updater": "^6.1.8"
   },
   "devDependencies": {

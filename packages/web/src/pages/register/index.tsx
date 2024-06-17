@@ -20,12 +20,12 @@ type FieldType = {
   licensekey?: string;
 };
 const Register = () => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const [isModalOpen, seTIsModalOpen] = useState(false);
   const [registerStatus, setRegisterStatus] = useState<number>();
   const [hasRole, setHasRole] = useState<boolean>(false);
   const { t, i18n } = useTranslation();
-  const [form] = useForm()
+  const [form] = useForm();
   const headerStyle: React.CSSProperties = {
     width: '100%',
     color: '#fff',
@@ -104,19 +104,27 @@ const Register = () => {
 
   const request = async (values) => {
     try {
-      setLoading(true)
+      setLoading(true);
       var agent = navigator.userAgent.toLowerCase();
       var isMac = /macintosh|mac os x/i.test(navigator.userAgent);
-      console.log("isMac", isMac)
+       // mac地址
+       const address=(await window.electronAPI.getMacAddress()) || null
+      console.log("isMac", isMac);
       if (agent.indexOf('win32') >= 0 || agent.indexOf('wow32') >= 0) {
         console.log('这是windows32位系统');
       }
       if (agent.indexOf('win64') >= 0 || agent.indexOf('wow64') >= 0) {
         console.log('这是windows64位系统');
       }
-      const res: any = await axios.get(
-        `https://www.regserver3.com/admin/checkregister.php?pid=${isMac ? '4' : '3'}&email=${values.email}&license=${values.licensekey}&mac=4`,
+      const res = await axios.get(
+        `https://www.regserver3.com/admin/checkregister.php`,
         {
+          params:{
+            pid:isMac ? '4' : '3',
+            email:values.email,
+            license:values.licensekey,
+            mac:address
+          },
           timeout: 3000,
         },
       );
@@ -125,19 +133,19 @@ const Register = () => {
         setRegisterStatus(res?.data);
         seTIsModalOpen(true);
         if (res?.data === 0) {
-          
+
           Local.set('userActivated', true);
-          Local.set("uEmail", values?.email)
-          Local.set("uKey", values?.licensekey)
-          
+          Local.set("uEmail", values?.email);
+          Local.set("uKey", values?.licensekey);
+
         } else {
           Local.set('userActivated', false);
         }
       }
-      setLoading(false)
+      setLoading(false);
       console.log('res', res);
     } catch (err) {
-      setLoading(false)
+      setLoading(false);
       console.log('err', err);
       setRegisterStatus(6);
       seTIsModalOpen(true);
@@ -151,18 +159,18 @@ const Register = () => {
       form.setFieldsValue({
         email: uEmail,
         licensekey: uKey
-      })
+      });
       if (uEmail && uKey) {
-        setHasRole(true)
+        setHasRole(true);
       }
     } catch(err) {
-      return {}
+      return {};
     }
-  }
+  };
 
   useEffect(() => {
     getInitFormValue();
-  }, [])
+  }, []);
 
   return (
     <Layout>
@@ -351,7 +359,7 @@ const Register = () => {
                   window.electronAPI.sendRegisterCloseWin();
                   window.electronAPI.sendMaOpenWin();
                 }
-                seTIsModalOpen(false)
+                seTIsModalOpen(false);
               }}
             >
               ok

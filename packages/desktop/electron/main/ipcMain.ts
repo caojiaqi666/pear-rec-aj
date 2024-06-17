@@ -38,6 +38,7 @@ import { PEAR_FILES_PATH } from './constant';
 import os from 'os';
 import process from 'process'
 import path from 'path'
+import { mac } from 'address';
 const selfWindws = async () =>
   await Promise.all(
     webContents
@@ -482,33 +483,15 @@ function initIpcMain() {
   });
 
   ipcMain.handle('get-mac-address', (event, arg) => {
-    try {
-      const networkInterfaces = os.networkInterfaces();
-      let macAddress = null;
-
-      for (const interfaceName in networkInterfaces) {
-        const networkInterface = networkInterfaces[interfaceName];
-
-        for (const interfaceInfo of networkInterface) {
-          // 只考虑IPv4地址且忽略内部接口
-          if (interfaceInfo.family === 'IPv4' && !interfaceInfo.internal) {
-            macAddress = interfaceInfo.mac;
-            // 通常我们只需要一个 MAC 地址，所以找到后就退出循环
-            break;
-          }
-        }
-
-        if (macAddress) break; // 如果已经找到 MAC 地址，则不需要继续检查其他接口
+    return new Promise((resolve, reject) => {
+      try {
+        mac(function (err, addr) {
+          resolve(addr)
+        });
+      } catch (err) {
+        resolve(null)
       }
-
-      if (macAddress) {
-        return macAddress;
-      } else {
-        throw new Error('No MAC address found.');
-      }
-    } catch (err) {
-      return '';
-    }
+    })
   });
 }
 

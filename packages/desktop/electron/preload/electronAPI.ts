@@ -181,7 +181,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
   sendRegisterOpenWin: () => ipcRenderer.send('register:open-win'),
   sendRegisterCloseWin: () => ipcRenderer.send('register:close-win'),
   // 获取设备 mac 地址
-  getMacAddress: () => ipcRenderer.send('get-mac-address'),
+  getMacAddress: () => ipcRenderer.invoke('get-mac-address'),
 });
 
 

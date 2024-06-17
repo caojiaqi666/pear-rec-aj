@@ -8,16 +8,26 @@ const queryActiveStatus = async ({ uEmail, uKey }) => {
   try {
     var agent = navigator.userAgent.toLowerCase();
     var isMac = /macintosh|mac os x/i.test(navigator.userAgent);
-    console.log("isMac", isMac)
+    console.log("isMac", isMac);
     if (agent.indexOf('win32') >= 0 || agent.indexOf('wow32') >= 0) {
       console.log('这是windows32位系统');
     }
     if (agent.indexOf('win64') >= 0 || agent.indexOf('wow64') >= 0) {
       console.log('这是windows64位系统');
     }
+    // mac地址
+    const address=(await window.electronAPI.getMacAddress()) || null
+    console.log({address});
+
     const { data: state } = await axios.get(
-      `https://www.regserver3.com/admin/checkregister.php?pid=${isMac ? '4' : '3'}&email=${uEmail}&license=${uKey}&mac=4`,
+      `https://www.regserver3.com/admin/checkregister.php`,
       {
+        params:{
+          pid:isMac ? '4' : '3',
+          email:uEmail,
+          license:uKey,
+          mac:address
+        },
         timeout: 3000,
       },
     );

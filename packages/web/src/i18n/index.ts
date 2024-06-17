@@ -5,23 +5,26 @@ import zhCN from "./locales/zh-CN.json";
 import enUS from "./locales/en-US.json";
 import deDE from "./locales/de-DE.json";
 
-export function initI18n() {
-	i18n.use(initReactI18next).init({
-		resources: {
-			de: {
-				translation: deDE,
-			},
-			en: {
-				translation: enUS,
-			},
-			zh: {
-				translation: zhCN,
-			},
-		},
-		lng: Local.get("i18n") || "zh", // 设置默认语言
-		fallbackLng: "zh", // 设置回退语言
-		interpolation: {
-			escapeValue: false, // 不需要转义内容
-		},
-	});
+export async function initI18n() {
+  const locale = await window.electronAPI.getLang()
+  // 默认语言采用本地语言
+  const lng = Local.get("i18n") ?? (locale.startsWith('zh') ? 'zh' : 'en')
+  i18n.use(initReactI18next).init({
+    resources: {
+      de: {
+        translation: deDE,
+      },
+      en: {
+        translation: enUS,
+      },
+      zh: {
+        translation: zhCN,
+      },
+    },
+    lng,
+    fallbackLng: "zh", // 设置回退语言
+    interpolation: {
+      escapeValue: false, // 不需要转义内容
+    },
+  });
 }

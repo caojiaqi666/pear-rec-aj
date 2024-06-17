@@ -493,6 +493,10 @@ function initIpcMain() {
       }
     })
   });
+
+  ipcMain.handle('get-lang', (event, arg) => {
+    return app.getLocale()
+  });
 }
 
 initIpcMain();

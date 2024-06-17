@@ -17,7 +17,6 @@ const queryActiveStatus = async ({ uEmail, uKey }) => {
     }
     // mac地址
     const address=(await window.electronAPI.getMacAddress()) || null
-    console.log({address});
 
     const { data: state } = await axios.get(
       `https://www.regserver3.com/admin/checkregister.php`,
@@ -41,7 +40,7 @@ const queryActiveStatus = async ({ uEmail, uKey }) => {
   }
 };
 
-export default function initApp(App) {
+export default async function initApp(App) {
   const userAgent = navigator.userAgent.toLowerCase();
   window.isElectron = userAgent.indexOf(' electron/') > -1 ? true : false;
   window.isOffline = location.host == 'pear-rec-xiguapi.vercel.app' ? true : false;
@@ -56,7 +55,7 @@ export default function initApp(App) {
     queryActiveStatus({ uEmail, uKey });
   }
 
-  initI18n();
+  await initI18n();
   root.render(<App />);
 
   postMessage({ payload: 'removeLoading' }, '*');
